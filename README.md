@@ -1,4 +1,4 @@
-# Shop & Chef
+# Shop_N_Chef
 Project #2
 
 Team 1
