@@ -1,7 +1,7 @@
 {
   "name": "shop_n_chef",
   "version": "1.0.0",
-  "description": "",
+  "description": "Shop & Chef - Grocery list & recipe app",
   "main": "server.js",
   "scripts": {
     "test": "npm run lint",
