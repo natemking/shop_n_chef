@@ -1,0 +1,67 @@
+body {
+    background: url(../assets/imgs/background.jpeg);
+}
+
+h1 {
+    font-size: 30px !important; 
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: black;
+    text-align: center;
+    font-size: 10px;
+}
+
+.navbar, .navbar-default, .navbar-header {
+    background-color: maroon;
+    
+}
+
+.navbar-default {
+    border-color: maroon;
+}
+
+.navbar-brand {
+    color: white !important;
+}
+
+.recipe-name {
+    font-size: 50px !important; 
+    color: white;
+    background-color: maroon;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 5rem;
+}
+
+.jumbotron{
+    padding: 2rem 1rem;
+    margin-top: 20px;
+    height: 525px;
+}
+
+.icon{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.row {
+    display: flex;
+}
+
+@media screen and (max-width: 992px) {
+    .bio-box {
+         width: 80%;
+         font-size: 90%;
+     }
+ }
+
+@media screen and (max-width: 768px) {
+    .bio-box {
+         width: 95%;
+         font-size: 90%;
+     }
+ }
