@@ -31,5 +31,17 @@ module.exports = function(sequelize, DataTypes) {
       null
     );
   });
+  //Associate user ID to Item table as the foreign key
+  User.associate = models => {
+    User.hasMany(models.Item, {
+      onDelete: "cascade"
+    });
+  };
+  //Associate user ID to Recipe table as the foreign key
+  User.associate = models => {
+    User.hasMany(models.Recipe, {
+      onDelete: "cascade"
+    });
+  };
   return User;
 };

@@ -1,7 +1,7 @@
 {
-  "name": "1-Passport-Example",
+  "name": "shop_n_chef",
   "version": "1.0.0",
-  "description": "",
+  "description": "Shop & Chef - Grocery list & recipe app",
   "main": "server.js",
   "scripts": {
     "test": "npm run lint",
@@ -11,8 +11,8 @@
     "watch": "nodemon server.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Team 1",
+  "license": "MIT",
   "dependencies": {
     "bcryptjs": "2.4.3",
     "express": "^4.17.0",
