@@ -1,5 +1,5 @@
 {
-  "name": "1-Passport-Example",
+  "name": "Shop & Chef",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -11,8 +11,8 @@
     "watch": "nodemon server.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Team 1",
+  "license": "MIT",
   "dependencies": {
     "bcryptjs": "2.4.3",
     "express": "^4.17.0",

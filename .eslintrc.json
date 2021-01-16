@@ -12,7 +12,7 @@
   "plugins": ["prettier"],
   "rules": {
     "array-callback-return": "error",
-    "camelcase": "error",
+    "camelcase": ["error", {"properties": "never"}],
     "curly": "error",
     "dot-notation": "error",
     "eqeqeq": "error",
@@ -32,7 +32,7 @@
     "prefer-arrow-callback": "error",
     "prefer-const": "error",
     "prettier/prettier": "error",
-    "quotes": ["error", "double"],
+    "quotes": ["error", "double", { "allowTemplateLiterals": true }],
     "semi": ["error", "always"],
     "vars-on-top": "error",
     "yoda": "error"
