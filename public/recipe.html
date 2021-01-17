@@ -29,12 +29,37 @@
     </nav>
 
     <main class="container">
-
-        <h1 class = "recipe-name">
-            Recipe Name
+        <form id="search">
+            <input id="search-text">
+            <button>Search</button>
+        </form>
+        <h1 class="recipe-name">
+            
         </h1>
-        <div class="row">
+        <!-- Container for the recipe search results. -->
+        <div class="row" id="recipe-results">
+                <section class="col-6">
+                    <div class="jumbotron">
+                
+                        <h1 class="recipe-header"> Recipes </h1>
 
+                
+                        <p class="lead"></p>
+                
+                        <br>
+                
+                        <ul id="recipes-list">
+                
+                        </ul>
+                    </div>
+                
+                </section>
+            
+        </div>
+
+        <!-- Container for all recipe related info -->
+        <div class="row" id="recipe-container">
+            <!-- Container for the recipe ingredients -->
             <section class="col-lg-6 col-md-12 col-sm-12">
                 <div class="jumbotron">
 
@@ -48,42 +73,13 @@
 
                     <br>
 
-                    <ul class="ingredient-list">
-                        <li class="ingredient-item">
-                            <p>
-                                Ingredient 1
-                            </p>
-                        </li>
-
-                        <li class="ingredient-item">
-                            <p>
-                                Ingredient 2
-                            </p>
-                        </li>
-
-                        <li class="ingredient-item">
-                            <p>
-                                Ingredient 3
-                            </p>
-                        </li>
-
-                        <li class="ingredient-item">
-                            <p>
-                                Ingredient 4
-                            </p>
-                        </li>
-
-                        <li class="ingredient-item">
-                            <p>
-                                Ingredient 5
-                            </p>
-                        </li>
+                    <ul id="ingredient-list">
 
                     </ul>
                 </div>
 
             </section>
-
+            <!-- Container for the recipe instructions -->
             <section class="col-lg-6 col-md-12 col-sm-12">
 
                 <div class="jumbotron">
@@ -95,36 +91,7 @@
                     </div>
                     <br>
 
-                    <ul class="directions-list">
-                        <li class="directions-item">
-                            <p>
-                                Step 1
-                            </p>
-                        </li>
-
-                        <li class="directions-item">
-                            <p>
-                                Step 2
-                            </p>
-                        </li>
-
-                        <li class="directions-item">
-                            <p>
-                                Step 3
-                            </p>
-                        </li>
-
-                        <li class="directions-item">
-                            <p>
-                                Step 4
-                            </p>
-                        </li>
-
-                        <li class="directions-item">
-                            <p>
-                                Step 5
-                            </p>
-                        </li>
+                    <ul  id="instructions">
 
                     </ul>
                 </div>
@@ -133,6 +100,7 @@
         </section>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="./js/recipe.js"></script>
 
 </body>
 

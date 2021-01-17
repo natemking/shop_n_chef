@@ -26,4 +26,9 @@ module.exports = function(app) {
   app.get("/members", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
+
+  //Route to the recipe page if user is authenticated
+  app.get("/recipe", isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/recipe.html"));
+  });
 };
