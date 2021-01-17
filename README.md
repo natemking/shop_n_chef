@@ -59,7 +59,7 @@ Licensed under the MIT License. Copyright © 2021
 
 ## Credits
 
-<!-- * [Guide to Express-Handlebars](https://stackabuse.com/guide-to-handlebars-templating-engine-for-node/)
+<!-- * [Make elements be clickable after they are returned from an ajax call](https://stackoverflow.com/questions/6594226/jquery-class-selector-not-working/6602120)
 
 * [Better Express routing for Node JS](https://caffeinecoding.com/better-express-routing-for-nodejs/)
 

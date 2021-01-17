@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
 
-  Item.associate = models => {
+  Item.associate = function(models) {
     Item.belongsTo(models.User, {
       foreignKey: {
         allowNull: false

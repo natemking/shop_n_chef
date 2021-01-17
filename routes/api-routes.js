@@ -17,17 +17,16 @@ module.exports = function(app) {
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
-  app.post("/api/signup", (req, res) => {
-    db.User.create({
-      email: req.body.email,
-      password: req.body.password
-    })
-      .then(() => {
-        res.redirect(307, "/api/login");
-      })
-      .catch(err => {
-        res.status(401).json(err);
+  app.post("/api/signup", async (req, res) => {
+    try {
+      await db.User.create({
+        email: req.body.email,
+        password: req.body.password
       });
+      res.redirect(307, "/api/login");
+    } catch (err) {
+      res.status(401).json(err);
+    }
   });
 
   // Route for logging user out
@@ -50,4 +49,46 @@ module.exports = function(app) {
       });
     }
   });
+
+  //Routes for GET, POST, PUT, & DELETE shopping list items
+  app
+    .route("/api/items/:id?")
+    .get(async (req, res) => {
+      if (!req.user) {
+        res.json({});
+      } else {
+        const items = await db.Item.findAll({});
+        res.json(items);
+      }
+    })
+    .post(async (req, res) => {
+      try {
+        await db.Item.create({
+          item_name: req.body.item_name,
+          UserId: req.user.id
+        });
+        res.status(201).end();
+      } catch (err) {
+        res.status(403).json(err);
+      }
+    })
+    .put(async (req, res) => {
+      try {
+        await db.Item.update(
+          { item_name: req.body.item_name },
+          { where: { id: req.body.id } }
+        );
+        res.status(202).end();
+      } catch (err) {
+        res.status(403).json(err);
+      }
+    })
+    .delete(async (req, res) => {
+      try {
+        await db.Item.destroy({ where: { id: req.params.id } });
+        res.status(202).end();
+      } catch (err) {
+        res.status(404).json(err);
+      }
+    });
 };
