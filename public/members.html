@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Shop & Chef</title>
     
     <!-- Linking Fontawesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -23,55 +23,31 @@
     
 <!-- {{!-- //Setup the index.ejs to have the template that ejs can render onto.
 Create a button in index.ejs that will submit the user input into the database. --}} -->
-<main class="container">
+  <main class="container hero-image">
   
     <!-- {{!-- Setting up a background image and styling the text to appear on top of it --}} -->
-  <div class="hero-image">
-      <h1>
-        <p>Shopping List</p>
-      </h1>
-      <table>
+    <h1>
+      <p>Shopping List</p>
+    </h1>
     <!-- We will want to add padding to and format the table once we integrate the css styling -->
     <!-- Dynamically add items to the shopping list using EJS -->
         
     <h4>Add Items To Your Shopping List</h4>
-      <form class="new_item">
-        <input class="form-control" type="text" id="new_item_text" placeholder="What Do You Need?" name="add"></input>
-        <button type="submit">Add</button>
-        <table class= "center">
-    <tr>
-          <td><%=Placeholder%></td>
-          <td> <i class="fa fa-plus"></i></td>
-          <td><%=Placeholder%></td>
-          <td> <i class="fa fa-plus"></i> </td>
-          <td><%=Placeholder%></td>
-          <td> <i class="fa fa-plus"></i> </td>
-    </tr>
-        <tr>
-          <td><%=Placeholder%></td>
-          <td> <i class="fa fa-plus"></i></td>
-          <td><%=Placeholder%></td>
-          <td> <i class="fa fa-plus"></i> </td>
-          <td><%=Placeholder%></td>
-          <td> <i class="fa fa-plus"></i> </td>
-        </tr>
-        <tr>
-          <td><%=Placeholder%></td>
-          <td> <i class="fa fa-plus"></i></td>
-          <td><%=Placeholder%></td>
-          <td> <i class="fa fa-plus"></i> </td>
-          <td><%=Placeholder%></td>
-          <td> <i class="fa fa-plus"></i> </td>
-        </tr>
-        <tr>
-          <td><%=Placeholder%></td>
-          <td> <i class="fa fa-plus"></i></td>
-          <td><%=Placeholder%></td>
-          <td> <i class="fa fa-plus"></i> </td>
-          <td><%=Placeholder%></td>
-          <td> <i class="fa fa-plus"></i> </td>
-        </tr>
-      </table>
-    </div>
-    </body>
+    <form id="add-item">
+      <input id="item-name-text" type=text placeholder="Add to your shopping list">
+      <button type="submit">Submit</button>
+    </form>
+      <!-- List for items in shopping list. Items added dynamically via members.js -->
+      <section>
+        <ul id="shopping-list">
+        </ul>
+      </section>
+
+  </main>
+
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/members.js"></script>
+</body>
 </html>
