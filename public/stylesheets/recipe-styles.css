@@ -40,7 +40,6 @@ h2 {
 .jumbotron{
     padding: 2rem 1rem;
     margin-top: 20px;
-    height: 525px;
 }
 
 .icon{
@@ -50,7 +49,16 @@ h2 {
 
 .row {
     display: flex;
+    width: 100%;
 }
+
+.ingredient-holder, .directions-holder, .recipe-holder
+{
+    height: auto;
+    max-height: 100%;
+    overflow: auto;
+}
+
 
 @media screen and (max-width: 992px) {
     .bio-box {
