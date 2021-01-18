@@ -1,30 +1,22 @@
 /* eslint-disable prefer-arrow-callback */
 $(document).ready(() => {
+  //*** Global variables ***//
+  //========================//
   //This will need to be moved to a .env file before deployment but it is fine here for now
   const apiKey = "230dda3c6fb740ea96eeebc2cc682653";
-
-  //Hide recipe container on page load
-  $("#recipe-results").hide();
-  $("#recipe-container").hide();
-
+  //Text value of the searched for recipe from members.html
+  const passedRecipe = location.search.replace("?", "");
   //Storage variable for user data
   let userData;
-  //Get logged in users user data (email/id)
-  $.get("/api/user_data").then(data => {
-    userData = data;
-    return userData;
-  });
+  //storage variables for later AJAX calls
+  let recipeApiId;
+  let recipeName;
 
-  $("#search").on("submit", function(e) {
-    e.preventDefault();
-    $("#recipe-container").hide();
-    $(".recipe-name").empty();
-    const $searchText = $("#search-text")
-      .val()
-      .trim();
+  //Function to make the ajax call to spoonacular to get a list of recipes that match the user search terms
+  const apiSearch = text => {
     $.ajax({
       type: "GET",
-      url: `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${$searchText}&instructionsRequired=true`
+      url: `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${text}&instructionsRequired=true`
     }).then(data => {
       //display the results to a DOM element
       $("#recipe-results").show();
@@ -36,41 +28,74 @@ $(document).ready(() => {
         );
       });
     });
+  };
+
+  //*** After Page Load ***//
+  //=======================//
+
+  //Get logged in users user data (email/id)
+  $.get("/api/user_data").then(data => {
+    userData = data;
+    return userData;
   });
 
-  //storage variables for later AJAX calls
-  let recipeApiId;
-  let recipeName;
+  //Hide recipe container on page load
+  $("#recipe-results").hide();
+  $("#recipe-container").hide();
 
-  //This call will be triggered when the user hits the button in a search bar form
+  //On page load search
+  apiSearch(passedRecipe);
+
+  //Search if user uses search feature in the navbar
+  $("#search").on("submit", function(e) {
+    e.preventDefault();
+    $("#recipe-container").hide();
+    $(".recipe-name").empty();
+    const $searchText = $("#search-text")
+      .val()
+      .trim();
+    apiSearch($searchText);
+  });
+
+  //This call will be triggered when the user clicks on a recipe provide from the initial search results.
   $(document).on("click", ".recipe-option", function(e) {
     e.preventDefault();
-    $("#recipe-results").hide();
-    $("#recipe-container").show();
+    //Recipe id for the API call
     recipeId = $(this).data("id");
-    if ($("#ingredient-list").children().length > 0) {
+    //Hide the recipe search results
+    $("#recipe-results").hide();
+    //Show the recipe container
+    $("#recipe-container").show();
+
+    //If there has already been a recipe chosen, clear out that data
+    if (
+      $("#ingredient-list").children().length > 0 ||
+      $("#instructions").children().length > 0
+    ) {
       $("#ingredient-list").empty();
+      $("#instructions").empty();
     }
+
+    //AJAX call to get the recipe data
     $.ajax({
       type: "GET",
       url: `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}&includeNutrition=false`
     }).then(data => {
+      //ForEach loop to add the recipe ingredients to the DOM
       data.extendedIngredients.forEach(ingredient => {
         $("#ingredient-list").append(
           `<li data-id=${ingredient.id} class="ingredient-item">${ingredient.measures.us.amount} ${ingredient.measures.us.unitShort} ${ingredient.originalName}<button id="addIngredient-btn" type="button" class="btn btn-outline-dark"><i class="fa fa-plus" aria-hidden="true"></i></li>`
         );
       });
-      $(".search").empty("");
+      //Add recipe name to DOM
       $(".recipe-name").html(
         `${data.title} <button id="fave-btn" type="button" class="btn btn-danger"><i class="fa fa-heart" aria-hidden="true"></i></button>`
       );
+      //Add recipe instructions to the DOM
       $("#instructions").append(data.instructions);
       recipeApiId = recipeId;
       recipeName = data.title;
     });
-    if ($("#instructions").children().length > 0) {
-      $("#instructions").empty();
-    }
   });
 
   //On click of favorite button in recipe name header, send the recipe name and its ID from the spoonacular API to the DB
