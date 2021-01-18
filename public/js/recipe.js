@@ -16,7 +16,8 @@ $(document).ready(() => {
 
   $("#search").on("submit", function(e) {
     e.preventDefault();
-
+    $("#recipe-container").hide();
+    $(".recipe-name").empty();
     const $searchText = $("#search-text")
       .val()
       .trim();
@@ -46,6 +47,9 @@ $(document).ready(() => {
     $("#recipe-results").hide();
     $("#recipe-container").show();
     recipeId = $(this).data("id");
+    if ($("#ingredient-list").children().length > 0) {
+      $("#ingredient-list").empty();
+    }
     $.ajax({
       type: "GET",
       url: `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}&includeNutrition=false`
@@ -63,6 +67,9 @@ $(document).ready(() => {
       recipeApiId = recipeId;
       recipeName = data.title;
     });
+    if ($("#instructions").children().length > 0) {
+      $("#instructions").empty();
+    }
   });
 
   //On click of favorite button in recipe name header, send the recipe name and its ID from the spoonacular API to the DB
