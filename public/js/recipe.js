@@ -52,7 +52,7 @@ $(document).ready(() => {
     }).then(data => {
       data.extendedIngredients.forEach(ingredient => {
         $("#ingredient-list").append(
-          `<li data-id=${ingredient.id} class="ingredient-item">${ingredient.measures.us.amount} ${ingredient.measures.us.unitShort} ${ingredient.originalName}</li>`
+          `<li data-id=${ingredient.id} class="ingredient-item">${ingredient.measures.us.amount} ${ingredient.measures.us.unitShort} ${ingredient.originalName}<button id="addIngredient-btn" type="button" class="btn btn-outline-dark"><i class="fa fa-plus" aria-hidden="true"></i></li>`
         );
       });
       $(".search").empty("");
@@ -65,7 +65,7 @@ $(document).ready(() => {
     });
   });
 
-  //On click of favorite button in recipe name header, send the revipe name and its ID from the spoonacular API to the DB
+  //On click of favorite button in recipe name header, send the recipe name and its ID from the spoonacular API to the DB
   $(document).on("click", "#fave-btn", function(e) {
     e.preventDefault();
     $.ajax({
@@ -75,6 +75,19 @@ $(document).ready(() => {
         user_id: userData.id,
         recipe_api_id: recipeApiId,
         recipe_name: recipeName
+      }
+    });
+  });
+
+  //On click of add ingredient button in the recipe, send the ingredient name and its ID from the spoonacular API to the DB
+  $(document).on("click", "#addIngredient-btn", function(e) {
+    e.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "/api/recipes",
+      data: {
+        user_id: userData.id,
+        item_name: itemName
       }
     });
   });
