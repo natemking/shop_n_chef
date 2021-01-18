@@ -5,6 +5,10 @@ module.exports = (sequelize, DataTypes) => {
     recipe_name: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    recipe_api_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   });
 

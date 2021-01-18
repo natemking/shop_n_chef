@@ -57,7 +57,7 @@ module.exports = function(app) {
       if (!req.user) {
         res.json({});
       } else {
-        const items = await db.Item.findAll({});
+        const items = await db.Item.findAll({ where: { UserId: req.user.id } });
         res.json(items);
       }
     })
@@ -80,6 +80,40 @@ module.exports = function(app) {
         );
         res.status(202).end();
       } catch (err) {
+        res.status(403).json(err);
+      }
+    })
+    .delete(async (req, res) => {
+      try {
+        await db.Item.destroy({ where: { id: req.params.id } });
+        res.status(202).end();
+      } catch (err) {
+        res.status(404).json(err);
+      }
+    });
+
+  //Routes for GET, POST,  & DELETE recipes
+  app
+    .route("/api/recipes/:id?")
+    .get(async (req, res) => {
+      if (!req.user) {
+        res.json({});
+      } else {
+        const recipes = await db.Recipe.finAll({
+          where: { UserId: req.user.id }
+        });
+        res.json(recipes);
+      }
+    })
+    .post(async (req, res) => {
+      try {
+        console.log(req.body);
+        await db.Recipe.create({
+          UserId: req.body.user_id,
+          recipe_name: req.body.recipe_name,
+          recipe_api_id: req.body.recipe_api_id
+        });
+      } catch (error) {
         res.status(403).json(err);
       }
     })

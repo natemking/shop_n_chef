@@ -7,6 +7,14 @@ $(document).ready(() => {
   $("#recipe-results").hide();
   $("#recipe-container").hide();
 
+  let userData;
+
+  $.get("/api/user_data").then(data => {
+    userData = data;
+    return userData;
+  });
+
+
   $("#search").on("submit", function(e) {
     e.preventDefault();
 
@@ -29,13 +37,16 @@ $(document).ready(() => {
     });
   });
 
+  //storage variables for later AJAX calls
+  let recipeApiId;
+  let recipeName;
+
   //This call will be triggered when the user hits the button in a search bar form
   $(document).on("click", ".recipe-option", function(e) {
-    e.preventDefault;
+    e.preventDefault();
     $("#recipe-results").hide();
     $("#recipe-container").show();
     recipeId = $(this).data("id");
-    console.log(recipeId);
     $.ajax({
       type: "GET",
       url: `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}&includeNutrition=false`
@@ -46,8 +57,26 @@ $(document).ready(() => {
         );
       });
       $(".search").empty("");
-      $(".recipe-name").text(data.title);
+      $(".recipe-name").html(
+        `${data.title} <button id="fave-btn" type="button" class="btn btn-danger"><i class="fa fa-heart" aria-hidden="true"></i></button>`
+      );
       $("#instructions").append(data.instructions);
+      recipeApiId = recipeId;
+      recipeName = data.title;
+    });
+  });
+
+  //On click of favorite button in recipe name header, send the revipe name and its ID from the spoonacular API to the DB
+  $(document).on("click", "#fave-btn", function(e) {
+    e.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "/api/recipes",
+      data: {
+        user_id: userData.id,
+        recipe_api_id: recipeApiId,
+        recipe_name: recipeName
+      }
     });
   });
 });
