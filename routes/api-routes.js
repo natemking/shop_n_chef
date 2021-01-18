@@ -92,7 +92,7 @@ module.exports = function(app) {
       }
     });
 
-  //Routes for GET, POST,  & DELETE recipes
+  //Routes for GET, POST, & DELETE recipes
   app
     .route("/api/recipes/:id?")
     .get(async (req, res) => {
