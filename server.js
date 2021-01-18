@@ -1,7 +1,6 @@
 // Requiring necessary npm packages
 const express = require("express");
 const session = require("express-session");
-const { FORCE } = require("sequelize/types/lib/index-hints");
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
 
