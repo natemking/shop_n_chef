@@ -7,8 +7,9 @@ $(document).ready(() => {
   $("#recipe-results").hide();
   $("#recipe-container").hide();
 
+  //Storage variable for user data
   let userData;
-
+  //Get logged in users user data (email/id)
   $.get("/api/user_data").then(data => {
     userData = data;
     return userData;
@@ -91,7 +92,7 @@ $(document).ready(() => {
     e.preventDefault();
     $.ajax({
       type: "POST",
-      url: "/api/recipes",
+      url: "/api/items",
       data: {
         user_id: userData.id,
         item_name: itemName
