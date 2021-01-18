@@ -25,9 +25,14 @@ $(document).ready(() => {
     results.forEach(item => {
       if (item.UserId === userData.id) {
         $("#shopping-list").append(
-          `<li id=${item.id} class="list-group-item list-group-item-action list-group-item-dark">
-            <span class"item">${item.item_name}</span>
-              <button type="button" class="delete-btn" data-item-id=${item.id}>delete</button>
+          `<li id=${item.id} class="list-group-item list-group-item-dark d-flex flex-row justify-content-between">
+            <button type="button" class="check-btn btn btn-success" data-item-id=${item.id}>
+              <i class="fa fa-check" aria-hidden="true"></i>
+              </button>
+            <span class="item no-strike">${item.item_name}</span>
+              <button type="button" class="delete-btn btn btn-danger" data-item-id=${item.id}>
+              <i class="fa fa-times" aria-hidden="true"></i>
+              </button>
               <input type='text' class='edit' style='display: none;'>
           </li>`
         );
@@ -49,6 +54,14 @@ $(document).ready(() => {
     }).then(() => {
       location.reload();
     });
+  });
+
+  //Event listener that strikethroughs the list item if the check mark has been clicked
+  $(document).on("click", ".check-btn", function(e) {
+    e.preventDefault();
+    $(this)
+      .next()
+      .toggleClass("strike");
   });
 
   //Event listener for editing item. When clicked the value turns into a text input box
@@ -92,6 +105,7 @@ $(document).ready(() => {
     }
   });
 
+  //Delete list item
   $(document).on("click", ".delete-btn", function(e) {
     e.preventDefault;
     const id = $(this).data("item-id");

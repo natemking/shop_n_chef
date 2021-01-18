@@ -70,3 +70,11 @@ a:link {
 
  font-weight:bold;
 }
+
+.no-strike {
+  text-decoration: none;
+}
+
+.strike {
+  text-decoration: line-through;
+}
