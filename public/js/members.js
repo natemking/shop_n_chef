@@ -10,20 +10,13 @@ $(document).ready(() => {
     userData = data;
   });
 
-  //Send added item to the backend to be added to Items table
-  $("#add-item").on("submit", function(e) {
+  //Send the recipe search text to recipe.html
+  $("#search").on("submit", function(e) {
     e.preventDefault();
-    $.ajax({
-      type: "POST",
-      url: "api/items",
-      data: {
-        item_name: $("#item-name-text")
-          .val()
-          .trim()
-      }
-    }).then(() => {
-      location.reload();
-    });
+    const $searchText = $("#search-text")
+      .val()
+      .trim();
+    $(location).attr("href", `/recipe?${$searchText}`);
   });
 
   // Display the items for the signed in user
@@ -39,6 +32,22 @@ $(document).ready(() => {
           </li>`
         );
       }
+    });
+  });
+
+  //Send added item to the backend to be added to Items table
+  $("#add-item").on("submit", function(e) {
+    e.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "api/items",
+      data: {
+        item_name: $("#item-name-text")
+          .val()
+          .trim()
+      }
+    }).then(() => {
+      location.reload();
     });
   });
 
