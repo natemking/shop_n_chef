@@ -16,18 +16,17 @@ h2 {
     font-size: 10px;
 }
 
-.navbar, .navbar-default, .navbar-header {
-    background-color: maroon;
-    
+img {
+        max-width: 450px;
+        height: auto;
+        float: left;
 }
 
-.navbar-default {
-    border-color: maroon;
-}
-
-.navbar-brand {
-    color: white !important;
-}
+#nav1 {
+    background-color: rgba(255,255,255,0.5);
+    font-weight:bold;
+    font-size:large;
+  }
 
 .recipe-name {
     font-size: 50px !important; 
@@ -59,6 +58,11 @@ h2 {
     overflow: auto;
 }
 
+#addIngredient-btn {
+    margin-left: 10px;
+    border: none;
+}
+
 
 @media screen and (max-width: 992px) {
     .bio-box {
@@ -71,5 +75,8 @@ h2 {
     .bio-box {
          width: 95%;
          font-size: 90%;
+     }
+     img {
+         width: 70%
      }
  }
