@@ -93,7 +93,9 @@ $(document).ready(() => {
         `${data.title} <button id="fave-btn" type="button" class="btn btn-danger"><i class="fa fa-heart" aria-hidden="true"></i></button>`
       );
       // add recipe image to DOM
-      $("#recipe-image").append(`<img src=${data.image} alt="picture of recipe" />`);
+      $("#recipe-image").append(
+        `<img src=${data.image} alt="picture of recipe" />`
+      );
       //Add recipe instructions to the DOM
       $("#instructions").append(data.instructions);
       recipeApiId = recipeId;
