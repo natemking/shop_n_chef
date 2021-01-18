@@ -19,6 +19,8 @@ $(document).ready(() => {
     }).then(data => {
       //display the results to a DOM element
       $("#recipe-results").show();
+      // jQuery.empty() syntax will clear out each search result as user inputs different ingredients
+      $("#recipes-list").empty();
       data.results.forEach(recipe => {
         $("#recipes-list").append(
           `<li data-id=${recipe.id} class="recipe-option">${recipe.title}</li>`
@@ -43,6 +45,7 @@ $(document).ready(() => {
           `<li data-id=${ingredient.id} class="ingredient-item">${ingredient.measures.us.amount} ${ingredient.measures.us.unitShort} ${ingredient.originalName}</li>`
         );
       });
+      $(".search").empty("");
       $(".recipe-name").text(data.title);
       $("#instructions").append(data.instructions);
     });
