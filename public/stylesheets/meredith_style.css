@@ -9,10 +9,12 @@ form.login {
   background-image: url("assets/images/background.jpg");
   background-color: #5d996c;
    /* Used if the image is unavailable */
-  height: 1200px; /* You must set a specified height */
+  height: 1000px; /* You must set a specified height */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
+  position: relative;
+
 }
 
 .container {
@@ -29,4 +31,26 @@ form.login {
 td, th {
   border: 1px solid rgb(243, 232, 232);
   padding: 1.5rem;
+  background: rgba(255,255,255,0.5);
+  color: #27402d; 
+}
+
+a:link {
+  color:#27402d;
+}
+
+.boxed {
+  border: 1px solid green ;
+  background: rgba(255,255,255,0.5);
+  size: 25%
+}
+
+.container-fluid{
+  position: absolute;
+  margin: 20px;
+  width: auto;
+}
+
+#nav1 {
+  background-color: rgba(255,255,255,0.5);
 }
