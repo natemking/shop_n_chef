@@ -25,7 +25,7 @@ $(document).ready(() => {
     results.forEach(item => {
       if (item.UserId === userData.id) {
         $("#shopping-list").append(
-          `<li id=${item.id}>
+          `<li id=${item.id} class="list-group-item list-group-item-action list-group-item-dark">
             <span class"item">${item.item_name}</span>
               <button type="button" class="delete-btn" data-item-id=${item.id}>delete</button>
               <input type='text' class='edit' style='display: none;'>
