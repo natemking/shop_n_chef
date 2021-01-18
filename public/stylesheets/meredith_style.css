@@ -54,3 +54,12 @@ a:link {
 #nav1 {
   background-color: rgba(255,255,255,0.5);
 }
+
+.card {
+  background-color: rgba(255,255,255,0.5);
+}
+
+.body {
+
+ font-weight:bold;
+}
