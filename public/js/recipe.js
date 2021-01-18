@@ -14,7 +14,6 @@ $(document).ready(() => {
     return userData;
   });
 
-
   $("#search").on("submit", function(e) {
     e.preventDefault();
 
