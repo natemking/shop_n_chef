@@ -1,9 +1,13 @@
+
+
 form.signup,
 form.login {
   margin-top: 50px;
 }
 
-
+#shopList {
+  padding: 10px;
+}
 /* Setting an image as the background for the app:  */
 .hero-image {
   background-image: url("assets/images/background.jpg");
@@ -42,7 +46,8 @@ a:link {
 .boxed {
   border: 1px solid green ;
   background: rgba(255,255,255,0.5);
-  size: 25%
+  size: 25%;
+  padding: 4rem;
 }
 
 .container-fluid{
