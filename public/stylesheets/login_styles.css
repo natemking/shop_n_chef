@@ -6,11 +6,24 @@
     background-size: cover;   
   }
   
-  form.signup,
   form.login {
     margin-top: 50px;
   }
   
+  img {
+    max-width: 15%;
+    height: auto;
+    padding: 10px;
+  }
+
+  h4 {
+    margin-bottom: 50px;
+  }
+
+  a:link {
+    color:#27402d;
+  }
+
   #shopList {
     padding: 10px;
   }
@@ -27,22 +40,12 @@
     margin-right: auto;
   }
   
-  td, th {
-    border: 1px solid rgb(243, 232, 232);
-    padding: 1.5rem;
-    background: rgba(255,255,255,0.5);
-    color: #27402d; 
-  }
-  
-  a:link {
-    color:#27402d;
-  }
-  
   .boxed {
     border: 1px solid green ;
     background: rgba(255,255,255,0.5);
     size: 25%;
-    padding: 4rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
   
   .container-fluid{
@@ -79,12 +82,6 @@
   
   .strike {
     text-decoration: line-through;
-  }
-  
-  img {
-    max-width: 15%;
-    height: auto;
-    padding: 10px;
   }
   
   .shopping-list {
