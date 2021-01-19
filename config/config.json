@@ -2,20 +2,20 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "shopnchef_db",
+    "database": "shopnchef_DB",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "Newcoding#2020",
+    "password": "null",
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": "Newcoding#2020",
+    "password": "null",
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
