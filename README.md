@@ -2,6 +2,11 @@
 Project #2
 
 Team 1
+
+ + [Nate King](https://github.com/natemking)
+ + [Luke Martin](https://github.com/LukeMartin-123)
+ + [Greg Leighton](https://github.com/preussenfahrer)
+ + [Meredith Jones](https://github.com/meredithajones)  
 ---
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/natemking/shop_n_chef/blob/main/LICENSE)
@@ -17,20 +22,50 @@ Team 1
 
 ---
 ## Table of Contents
+ * [Links](#links)
+ * [Introduction](#introduction)
  * [Description](#description)
     + [Scope of Work](#scope-of-work)
     + [Sequelize](#sequelize)
     + [Node.js](#nodejs)
     + [EJS View Engine](#ejs-view-engine)
+    + [Axios](#axios)
     + [jQuery](#jquery)
     + [CSS](#css)
   * [Screenshots](#screenshots)
   * [License](#license)
   * [Credits](#credits)
 
-## Description
+# Links
+
+* [Deployed Link]()
+
+# Introduction
+  Shop & Chef is a disposable grocery list application. 
+
+   This application is designed for those who are experienced home chefs, or newcomers to home cooking, combining food shopping with new, exciting, and inspiring recipe suggestions. 
+
+## Description/User Story 
+  AS A USER I want an app that will allow me to link my grocery list with potential recipes
+  WHEN I use Shop & Chef 
+  THEN I will enter my log-in credentials
+
+  WHEN I input an ingredient
+  THEN it will be added to a list
+
+  WHEN I select a specific ingredient on my list
+  THEN I am prompted with potential recipes to use this ingredient
+
+  WHEN I have a recipe I like
+  THEN I can save this to a list of favorite recipes
+
 
 ### Scope of Work
+Users can easily add items of their choosing to thier shopping list. If they are looking for recipe inspiration, the app has a feature to seach for recipes based on main ingredient as well. 
+
+To streamline the experience of creating a shopping list based on recipes, Shop & Chef allows users to add ingredients directly from recipes to their shopping list with a click on the ingredient. 
+
+The application also alows users to save and retrieve their favorite recipes. 
 
 ### Sequelize
 

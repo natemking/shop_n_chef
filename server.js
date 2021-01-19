@@ -13,15 +13,8 @@ const db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
 const app = express();
-app.set("view engine", "ejs");
-app.get("/recipe:userQuery", (req, res) => {
-  res.render("recipe", {
-    data: {
-      userQuery: req.params.userQuery,
-      searchResults: ["book1", "book2", "book3"]
-    }
-  });
-});
+//
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
