@@ -1,6 +1,10 @@
-body {
-    background: url(../assets/imgs/background.jpeg);
-}
+.background {
+    background-image: url("assets/images/background.jpg");
+    height: auto;
+    width: auto;
+    background-position: center;
+    background-size: cover;   
+  }
 
 h1 {
     font-size: 30px !important;
@@ -27,6 +31,11 @@ li {
     font-size: 20px;
     margin-top: 5px;
 }
+
+.container {
+    justify-content: center;
+}
+
 
 #nav1 {
     background-color: rgba(255,255,255,0.5);
@@ -119,6 +128,11 @@ cursor:pointer;
     li {
         font-size: 20px;
     }
+    .row {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
 
 @media screen and (max-width: 768px) {
     h1 {
@@ -138,5 +152,11 @@ cursor:pointer;
     li {
         font-size: 20px;
     }
+    .recipe-name {
+        width: 100%;
+        justify-content: center;
+    }
 }
-}
+@media screen and (max-width: 600px) {
+
+}}
