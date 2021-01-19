@@ -24,15 +24,11 @@ module.exports = function(app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/members.html"));
+    res.render("members", { title: "Passport Authentication" });
   });
 
   //Route to the recipe page if user is authenticated
   app.get("/recipe", isAuthenticated, (req, res) => {
     res.render("recipe", { title: "View Recipe" });
-  });
-  // testing purposes for ejs
-  app.get("/test", (req, res) => {
-    res.render("login", { title: "test title" });
   });
 };
