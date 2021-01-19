@@ -3,6 +3,7 @@ const express = require("express");
 const session = require("express-session");
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
+// const ejs = require("ejs");
 
 // require .env file
 require("dotenv").config();
@@ -14,7 +15,8 @@ const db = require("./models");
 // Creating express app and configuring middleware needed for authentication
 const app = express();
 //
-
+// sets up engine for rendering via ejs
+app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));

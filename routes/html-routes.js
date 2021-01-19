@@ -10,7 +10,7 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.render("login", { title: "Login" });
   });
 
   app.get("/signup", (req, res) => {
@@ -18,7 +18,7 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.render("signup", { title: "Sign Up" });
   });
 
   // Here we've add our isAuthenticated middleware to this route.
@@ -29,6 +29,10 @@ module.exports = function(app) {
 
   //Route to the recipe page if user is authenticated
   app.get("/recipe", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/recipe.html"));
+    res.render("recipe", { title: "View Recipe" });
+  });
+  // testing purposes for ejs
+  app.get("/test", (req, res) => {
+    res.render("login", { title: "test title" });
   });
 };
