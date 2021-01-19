@@ -3,7 +3,7 @@ $(document).ready(() => {
   //*** Global variables ***//
   //========================//
   //This will need to be moved to a .env file before deployment but it is fine here for now
-  const apiKey = "230dda3c6fb740ea96eeebc2cc682653";
+  const apiKey = process.env.API_KEY;
   //Text value of the searched for recipe from members.html
   const passedRecipe = location.search.replace("?", "");
   //Storage variable for user data
