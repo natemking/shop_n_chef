@@ -8,6 +8,7 @@ h1 {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
+    text-decoration: underline;
 }
 
 h2 {
@@ -22,11 +23,33 @@ img {
         float: left;
 }
 
+li {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
 #nav1 {
     background-color: rgba(255,255,255,0.5);
     font-weight:bold;
     font-size:large;
-  }
+}
+
+#logo {
+    margin-bottom: 15px;
+    max-width: 50%;
+    display:block !important;
+    margin-left:auto;
+    margin-right:auto;
+    float: none !important;
+}
+
+#recipe-results {
+    justify-content: center;
+}
+
+.recipe-holder {
+    justify-content: center;
+}
 
 .recipe-name {
     font-size: 50px;
@@ -34,6 +57,7 @@ img {
     background-color: maroon;
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 5rem;
+    text-decoration: underline !important;
 }
 
 .jumbotron{
@@ -62,12 +86,11 @@ img {
     margin-left: 10px;
     border: none;
     cursor:pointer;
-    
+
 }
 
 .ingredient-holder {
 cursor:pointer;
-
 }
 
 
@@ -80,7 +103,15 @@ cursor:pointer;
         width: 50%;
         justify-content: center;
     }
- }
+    #logo {
+        max-width: 50%;
+        display:block !important;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    li {
+        font-size: 20px;
+    }
 
 @media screen and (max-width: 768px) {
     h1 {
@@ -93,5 +124,12 @@ cursor:pointer;
          width: 50%;
          justify-content: center;
      }
-     
- }
+     #logo {
+        max-width: 50%;
+        text-align: center
+    }
+    li {
+        font-size: 20px;
+    }
+}
+}
