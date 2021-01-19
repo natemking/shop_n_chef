@@ -69,6 +69,7 @@ a:link {
 .body {
 
  font-weight:bold;
+ font: italic small-caps bold 16px/2 cursive;
 }
 
 .no-strike {
@@ -77,4 +78,10 @@ a:link {
 
 .strike {
   text-decoration: line-through;
+}
+
+img {
+  max-width: 15%;
+  height: auto;
+  padding: 10px;
 }
