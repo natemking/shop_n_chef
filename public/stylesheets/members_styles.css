@@ -1,4 +1,10 @@
-
+.background {
+  background-image: url("assets/images/background.jpg");
+  height: 1500px;
+  width: auto;
+  background-position: center;
+  background-size: cover;   
+}
 
 form.signup,
 form.login {
@@ -7,18 +13,6 @@ form.login {
 
 #shopList {
   padding: 10px;
-}
-/* Setting an image as the background for the app:  */
-.hero-image {
-  background-image: url("assets/images/background.jpg");
-  background-color: #5d996c;
-   /* Used if the image is unavailable */
-  height: 1000px; /* You must set a specified height */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-  position: relative;
-
 }
 
 .container {
@@ -87,7 +81,7 @@ a:link {
 }
 
 img {
-  max-width: 15%;
+  max-width: 30%;
   height: auto;
   padding: 10px;
 }

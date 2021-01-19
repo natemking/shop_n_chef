@@ -1,0 +1,92 @@
+.background {
+    background-image: url("assets/images/background.jpg");
+    height: 1500px;
+    width: auto;
+    background-position: center;
+    background-size: cover;   
+  }
+  
+  form.signup,
+  form.login {
+    margin-top: 50px;
+  }
+  
+  #shopList {
+    padding: 10px;
+  }
+  
+  .container {
+    text-align: center;
+    justify-content: center;
+    color: white;
+    
+  }
+  
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  td, th {
+    border: 1px solid rgb(243, 232, 232);
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.5);
+    color: #27402d; 
+  }
+  
+  a:link {
+    color:#27402d;
+  }
+  
+  .boxed {
+    border: 1px solid green ;
+    background: rgba(255,255,255,0.5);
+    size: 25%;
+    padding: 4rem;
+  }
+  
+  .container-fluid{
+    position: absolute;
+    margin: 20px;
+    width: auto;
+  }
+  
+  #nav1 {
+    background-color: rgba(255,255,255,0.5);
+    font-weight:bold;
+    font-size:large;
+  }
+  
+  .card {
+    background-color: rgba(255,255,255,0.5);
+  }
+  
+  .body {
+  
+   font-weight:bold;
+   /* font: italic small-caps bold 16px/2 cursive; */
+   font-family: 'Oleo Script', cursive;
+  }
+  
+  .container {
+    font-family: 'Oleo Script', cursive;
+    font-size: 20px;
+  }
+  
+  .no-strike {
+    text-decoration: none;
+  }
+  
+  .strike {
+    text-decoration: line-through;
+  }
+  
+  img {
+    max-width: 15%;
+    height: auto;
+    padding: 10px;
+  }
+  
+  .shopping-list {
+    font-family: 'Sedgwick Ave', cursive;
+  }
