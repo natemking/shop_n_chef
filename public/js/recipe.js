@@ -13,7 +13,7 @@ $(document).ready(() => {
   let recipeName;
 
   //Function to make the ajax call to spoonacular to get a list of recipes that match the user search terms
-  const apiSearch = text => {
+  const recipeSearch = text => {
     $.ajax({
       type: "GET",
       url: `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${text}&instructionsRequired=true`
@@ -37,7 +37,7 @@ $(document).ready(() => {
     //Show the recipe container
     $("#recipe-container").show();
 
-    //If there has already been a recipe chosen, clear out that data
+    //If there has already been a recipe chosen, clear out that DOM
     if (
       $("#ingredient-list").children().length > 0 ||
       $("#instructions").children().length > 0
@@ -86,20 +86,22 @@ $(document).ready(() => {
   $("#recipe-results").hide();
   $("#recipe-container").hide();
 
-  //On page load search
-  apiSearch(passedRecipe);
+  //On page load, if the url parameter is a word search for recipe options otherwise if the parameter is a recipe ID search for that exact recipe
+  passedRecipe.match(/^[a-z]/gi)
+    ? recipeSearch(passedRecipe)
+    : getAndDisplayRecipe(passedRecipe);
 
   // Send saved recipes to the saved recipes dropdown
-  // $.get("api/recipes").then(results => {
-  //   results.forEach(recipe => {
-  //     if (recipe.UserId === userData.id) {
-  //       $(".dropdown-menu").append(
-  //         `<a class="dropdown-item" id=${recipe.recipe_api_id} href="/recipe?${recipe.recipe_name}">${recipe.recipe_name}</a>
-  //         <div class="dropdown-divider"></div>`
-  //       );
-  //     }
-  //   });
-  // });
+  $.get("api/recipes").then(results => {
+    results.forEach(recipe => {
+      if (recipe.UserId === userData.id) {
+        $(".dropdown-menu").append(
+          `<a class="dropdown-item" id=${recipe.recipe_api_id} href="/recipe?${recipe.recipe_api_id}">${recipe.recipe_name}</a>
+          <div class="dropdown-divider"></div>`
+        );
+      }
+    });
+  });
 
   //Search if user uses search feature in the navbar
   $("#search").on("submit", function(e) {
@@ -109,7 +111,7 @@ $(document).ready(() => {
     const $searchText = $("#search-text")
       .val()
       .trim();
-    apiSearch($searchText);
+    recipeSearch($searchText);
   });
 
   //This call will be triggered when the user clicks on a recipe provide from the initial search results.
