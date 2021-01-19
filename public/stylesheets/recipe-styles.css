@@ -93,6 +93,13 @@ li {
 cursor:pointer;
 }
 
+.no-check {
+    visibility: hidden;
+}
+
+.check {
+    visibility: visible;
+}
 
 @media screen and (max-width: 992px) {
     .bio-box {

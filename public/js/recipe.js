@@ -59,6 +59,9 @@ $(document).ready(() => {
             <span id="ingredient-text" data-name="${ingredient.name}">
               ${ingredient.originalName}
             </span>
+            <span id="add-item" class="no-check">
+              <i class="fa fa-check" aria-hidden="true"></i>
+            </span>
           </li>`
         );
       });
@@ -144,13 +147,17 @@ $(document).ready(() => {
   //On click of add ingredient button in the recipe, send the ingredient name and its ID from the spoonacular API to the DB
   $(document).on("click", "#ingredient-text", function(e) {
     e.preventDefault();
-    itemName = console.log(userData.id);
-    console.log($(this).data("name"));
+    //Get this items name
+    itemName = $(this).data("name");
+    //Toggle checkmark if user adds ingredients
+    $(this)
+      .next()
+      .toggleClass("check");
+    //Post ingredient to shopping list
     $.ajax({
       type: "POST",
       url: "/api/items",
       data: {
-        user_id: userData.id,
         item_name: itemName
       }
     });
