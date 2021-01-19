@@ -19,98 +19,99 @@
 </head>
 
 <body>
-  <div class ="background">
-  <main class="container hero-image">
-    <nav class="navbar navbar-expand-lg navbar-light bg-gradien-transparent" id="nav1">
+  <div class="background">
+    <main class="container hero-image">
+      
+      <nav class="navbar navbar-expand-lg navbar-light bg-gradien-transparent" id="nav1">
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <section class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="members.html">Shopping List<span class="sr-only">Shopping List</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="login.html">Log In</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/logout">Log Out</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Saved Recipes
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">First Recipe</a>
-              <a class="dropdown-item" href="#">Second Recipe</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Third Recipe</a>
+        <section class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="members.html">Shopping List<span class="sr-only">Shopping List</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">Log In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Log Out</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Saved Recipes
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">First Recipe</a>
+                <a class="dropdown-item" href="#">Second Recipe</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Third Recipe</a>
+              </div>
+            </li>
+          </ul>
+          <form id="search" class="form-inline my-2 my-lg-0">
+            <!-- <a>Search for a recipe  </a> -->
+            <input id="search-text" class="form-control mr-sm-2" type="text" placeholder="Find a recipe">
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </section>
+      </nav>
+
+      <section class="hero-image">
+        <div class="row justify-content-center align-items-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-md-offset-3">
+                <section class="boxed">
+                  <img src="assets/imgs/bag.png" alt="Shop & Chef Logo" id="logo">
+                  <h1>
+                    <p>Shopping List</p>
+                  </h1>
+                  </a>
+                  </i>
+              </div>
             </div>
-          </li>
-        </ul>
-        <form id="search" class="form-inline my-2 my-lg-0">
-          <!-- <a>Search for a recipe  </a> -->
-          <input id="search-text" class="form-control mr-sm-2" type="text" placeholder="Find a recipe">
-          <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
-        </form>
+          </div>
+          </span>
+          </nav>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-md-offset-3">
+
+                <!-- {{!-- //Setup the index.ejs to have the template that ejs can render onto.
+Create a button in index.ejs that will submit the user input into the database. --}} -->
+                <!-- {{!-- Setting up a background image and styling the text to appear on top of it --}} -->
+                <!-- We will want to add padding to and format the table once we integrate the css styling -->
+                <!-- Dynamically add items to the shopping list using EJS -->
+
+                <!-- {{!-- //Setup the index.ejs to have the template that ejs can render onto.
+Create a button in index.ejs that will submit the user input into the database. --}} -->
+
+
+                <!-- {{!-- Setting up a background image and styling the text to appear on top of it --}} -->
+                <!-- We will want to add padding to and format the table once we integrate the css styling -->
+                <!-- Dynamically add items to the shopping list using EJS -->
+                <section class="boxed">
+                  <h4>Add Items To Your Shopping List</h4>
+                  <form id="add-item">
+                    <input id="item-name-text" type=text placeholder="Add to list">
+                    <button type="submit">Submit</button>
+                  </form>
+                  <!-- List for items in shopping list. Items added dynamically via members.js -->
+                  <section>
+                    <ul id="shopping-list" class="list-group">
+                    </ul>
+              </div>
+            </div>
+          </div>
       </section>
-    </nav>
-
-    <section class="hero-image">
-      <div class="row justify-content-center align-items-center">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-              <section class="boxed">
-                <img src="assets/imgs/bag.png" alt="Shop & Chef Logo" id="logo">
-                <h1>
-                  <p>Shopping List</p>
-                </h1>
-                </a>
-                </i>
-            </div>
-          </div>
-        </div>
-        </span>
-        </nav>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-
-              <!-- {{!-- //Setup the index.ejs to have the template that ejs can render onto.
-Create a button in index.ejs that will submit the user input into the database. --}} -->
-              <!-- {{!-- Setting up a background image and styling the text to appear on top of it --}} -->
-              <!-- We will want to add padding to and format the table once we integrate the css styling -->
-              <!-- Dynamically add items to the shopping list using EJS -->
-
-              <!-- {{!-- //Setup the index.ejs to have the template that ejs can render onto.
-Create a button in index.ejs that will submit the user input into the database. --}} -->
-
-
-              <!-- {{!-- Setting up a background image and styling the text to appear on top of it --}} -->
-              <!-- We will want to add padding to and format the table once we integrate the css styling -->
-              <!-- Dynamically add items to the shopping list using EJS -->
-              <section class="boxed">
-                <h4>Add Items To Your Shopping List</h4>
-                <form id="add-item">
-                  <input id="item-name-text" type=text placeholder="Add to list">
-                  <button type="submit">Submit</button>
-                </form>
-                <!-- List for items in shopping list. Items added dynamically via members.js -->
-                <section>
-                  <ul id="shopping-list" class="list-group">
-                  </ul>
-            </div>
-          </div>
-        </div>
-    </section>
-    </section>
-  </main>
-</div>
+      </section>
+    </main>
+  </div>
   <!-- jQuery CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
