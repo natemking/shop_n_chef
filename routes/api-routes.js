@@ -99,7 +99,7 @@ module.exports = function(app) {
       if (!req.user) {
         res.json({});
       } else {
-        const recipes = await db.Recipe.finAll({
+        const recipes = await db.Recipe.findAll({
           where: { UserId: req.user.id }
         });
         res.json(recipes);
@@ -107,7 +107,6 @@ module.exports = function(app) {
     })
     .post(async (req, res) => {
       try {
-        console.log(req.body);
         await db.Recipe.create({
           UserId: req.body.user_id,
           recipe_name: req.body.recipe_name,
