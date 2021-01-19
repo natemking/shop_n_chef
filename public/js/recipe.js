@@ -2,8 +2,7 @@
 $(document).ready(() => {
   //*** Global variables ***//
   //========================//
-  //This will need to be moved to a .env file before deployment but it is fine here for now
-  const apiKey = process.env.API_KEY;
+
   //Text value of the searched for recipe from members.html
   const passedRecipe = location.search.replace("?", "");
   //Storage variable for user data
@@ -16,7 +15,7 @@ $(document).ready(() => {
   const recipeSearch = text => {
     $.ajax({
       type: "GET",
-      url: `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${text}&instructionsRequired=true`
+      url: `/api/get_recipes/${text}`
     }).then(data => {
       //display the results to a DOM element
       $("#recipe-results").show();
@@ -50,12 +49,17 @@ $(document).ready(() => {
     //AJAX call to get the recipe data
     $.ajax({
       type: "GET",
-      url: `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}&includeNutrition=false`
+      url: `/api/get_recipe/${recipeId}`
     }).then(data => {
       //ForEach loop to add the recipe ingredients to the DOM
       data.extendedIngredients.forEach(ingredient => {
         $("#ingredient-list").append(
-          `<li data-id=${ingredient.id} class="ingredient-item">${ingredient.measures.us.amount} ${ingredient.measures.us.unitShort} ${ingredient.originalName}<button id="addIngredient-btn" type="button" class="btn btn-outline-dark"><i class="fa fa-plus" aria-hidden="true"></i></li>`
+          `<li data-id=${ingredient.id} class="ingredient-item">
+            ${ingredient.measures.us.amount} ${ingredient.measures.us.unitShort}
+            <span id="ingredient-text" data-name="${ingredient.name}">
+              ${ingredient.originalName}
+            </span>
+          </li>`
         );
       });
       //Add recipe name to DOM
@@ -138,8 +142,10 @@ $(document).ready(() => {
   });
 
   //On click of add ingredient button in the recipe, send the ingredient name and its ID from the spoonacular API to the DB
-  $(document).on("click", "#addIngredient-btn", function(e) {
+  $(document).on("click", "#ingredient-text", function(e) {
     e.preventDefault();
+    itemName = console.log(userData.id);
+    console.log($(this).data("name"));
     $.ajax({
       type: "POST",
       url: "/api/items",

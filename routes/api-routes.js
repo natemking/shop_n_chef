@@ -1,11 +1,12 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
+const axios = require("axios");
 
 module.exports = function(app) {
-  // Using the passport.authenticate middleware with our local strategy.
-  // If the user has valid login credentials, send them to the members page.
-  // Otherwise the user will be sent an error
+  //*** Local API authentication ***//
+  //================================//
+  // If the user has valid login credentials, send them to the members page,  Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
@@ -14,9 +15,7 @@ module.exports = function(app) {
     });
   });
 
-  // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
-  // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
-  // otherwise send back an error
+  //Route use to sign up page. PW is hashed before it hits the DB
   app.post("/api/signup", async (req, res) => {
     try {
       await db.User.create({
@@ -50,6 +49,32 @@ module.exports = function(app) {
     }
   });
 
+  //*** 3rd party API calls***//
+  //==========================//
+  //Route to get a list recipes data from spoonacular for the frontend
+  app.get("/api/get_recipes/:text", (req, res) => {
+    axios
+      .get(
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.API_KEY}&query=${req.params.text}&instructionsRequired=true`
+      )
+      .then(response => {
+        res.json(response.data);
+      });
+  });
+
+  //Route to get a chosen recipes data from spoonacular for the frontend
+  app.get("/api/get_recipe/:id", (req, res) => {
+    axios
+      .get(
+        `https://api.spoonacular.com/recipes/${req.params.id}/information?apiKey=${process.env.API_KEY}&includeNutrition=false`
+      )
+      .then(response => {
+        res.json(response.data);
+      });
+  });
+
+  //*** Local API call to DB ***//
+  //============================//
   //Routes for GET, POST, PUT, & DELETE shopping list items
   app
     .route("/api/items/:id?")
