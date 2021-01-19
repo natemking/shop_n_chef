@@ -61,6 +61,13 @@ img {
 #addIngredient-btn {
     margin-left: 10px;
     border: none;
+    cursor:pointer;
+    
+}
+
+.ingredient-holder {
+cursor:pointer;
+
 }
 
 

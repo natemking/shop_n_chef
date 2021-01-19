@@ -69,7 +69,13 @@ a:link {
 .body {
 
  font-weight:bold;
- font: italic small-caps bold 16px/2 cursive;
+ /* font: italic small-caps bold 16px/2 cursive; */
+ font-family: 'Oleo Script', cursive;
+}
+
+.container {
+  font-family: 'Oleo Script', cursive;
+  font-size: 20px;
 }
 
 .no-strike {
@@ -84,4 +90,8 @@ img {
   max-width: 15%;
   height: auto;
   padding: 10px;
+}
+
+.shopping-list {
+  font-family: 'Sedgwick Ave', cursive;
 }
