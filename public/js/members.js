@@ -3,8 +3,7 @@ $(document).ready(() => {
   //Storage variable for signed in users email and id data
   let userData;
 
-  // This file just does a GET request to figure out which user is logged in
-  // and updates the HTML on the page and updates the userData variable
+  //Get user data from DB
   $.get("/api/user_data").then(data => {
     $(".member-name").text(data.email);
     userData = data;
@@ -20,20 +19,18 @@ $(document).ready(() => {
   });
 
   // Display the items for the signed in user
-  // Code here is for testing... To be removed
   $.get("api/items").then(results => {
     results.forEach(item => {
       if (item.UserId === userData.id) {
         $("#shopping-list").append(
-          `<li id=${item.id} class="list-group-item list-group-item-dark d-flex flex-row justify-content-between">
+          `<li class="list-group-item list-group-item-dark d-flex flex-row justify-content-between">
             <button type="button" class="check-btn btn btn-success" data-item-id=${item.id}>
               <i class="fa fa-check" aria-hidden="true"></i>
-              </button>
-            <span class="item no-strike">${item.item_name}</span>
-              <button type="button" class="delete-btn btn btn-danger" data-item-id=${item.id}>
+            </button>
+            <span id=${item.id} class="item no-strike">${item.item_name}</span>
+            <button type="button" class="delete-btn btn btn-danger" data-item-id=${item.id}>
               <i class="fa fa-times" aria-hidden="true"></i>
-              </button>
-              <input type='text' class='edit' style='display: none;'>
+            </button>
           </li>`
         );
       }
@@ -56,7 +53,7 @@ $(document).ready(() => {
     });
   });
 
-  //Event listener that strikethroughs the list item if the check mark has been clicked
+  //If checkbox is clicked, strikethrough is toggled on the item
   $(document).on("click", ".check-btn", function(e) {
     e.preventDefault();
     $(this)
@@ -64,50 +61,62 @@ $(document).ready(() => {
       .toggleClass("strike");
   });
 
-  //Event listener for editing item. When clicked the value turns into a text input box
+  //When item is clicked it becomes a text input for editing
   $(document).on("click", ".item", function() {
     const currentItem = $(this)
       .text()
       .trim();
-    $(this)
-      .children()
-      .hide();
-    $(this)
-      .children("input.edit")
-      .val(currentItem);
-    $(this)
-      .children("input.edit")
-      .show();
-    $(this)
-      .children("input.edit")
+    $(this).wrap(`<input type="text" class="edit" />`);
+    $("input.edit")
+      .val(currentItem)
       .focus();
   });
 
-  //Hit enter key to post new item name
-  $(document).on("keyup", ".item", function(e) {
+  //Cancel item edit
+  $(document).on("blur", "input.edit", function() {
+    $(this)
+      .find(".item")
+      .unwrap();
+  });
+
+  //Hit enter key to post new, edited item name
+  $(document).on("keyup", "input.edit", function(e) {
     e.preventDefault();
+    //If enter key is hit
     if (e.which === 13) {
+      //Variable for the new item data
       const editedItem = $(this)
-        .children("input")
         .val()
         .trim();
+      //Variable for the items DB ID
+      const itemId = $(this)
+        .find("span")
+        .attr("id");
+      //Add the edited item into its span container
+      $(this)
+        .find("span")
+        .text(editedItem);
+      //Remove focus from the item
       $(this).blur();
+      //Send the edited item value and its DB ID to the backend
       $.ajax({
         type: "PUT",
         url: "api/items",
         data: {
           item_name: editedItem,
-          id: $(this).attr("id")
+          id: itemId
         }
-      }).then(() => {
-        location.reload();
+      }).then(err => {
+        if (err) {
+          throw err;
+        }
       });
     }
   });
 
-  //Delete list item
+  //Delete a list item when the x box is clicked
   $(document).on("click", ".delete-btn", function(e) {
-    e.preventDefault;
+    e.preventDefault();
     const id = $(this).data("item-id");
     $.ajax({
       type: "DELETE",

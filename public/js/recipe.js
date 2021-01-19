@@ -30,38 +30,8 @@ $(document).ready(() => {
     });
   };
 
-  //*** After Page Load ***//
-  //=======================//
-
-  //Get logged in users user data (email/id)
-  $.get("/api/user_data").then(data => {
-    userData = data;
-    return userData;
-  });
-
-  //Hide recipe container on page load
-  $("#recipe-results").hide();
-  $("#recipe-container").hide();
-
-  //On page load search
-  apiSearch(passedRecipe);
-
-  //Search if user uses search feature in the navbar
-  $("#search").on("submit", function(e) {
-    e.preventDefault();
-    $("#recipe-container").hide();
-    $(".recipe-name").empty();
-    const $searchText = $("#search-text")
-      .val()
-      .trim();
-    apiSearch($searchText);
-  });
-
-  //This call will be triggered when the user clicks on a recipe provide from the initial search results.
-  $(document).on("click", ".recipe-option", function(e) {
-    e.preventDefault();
-    //Recipe id for the API call
-    recipeId = $(this).data("id");
+  //Function to make the ajax call to spoonacular to get a the details of the recipe and display on DOM
+  const getAndDisplayRecipe = recipeId => {
     //Hide the recipe search results
     $("#recipe-results").hide();
     //Show the recipe container
@@ -101,9 +71,56 @@ $(document).ready(() => {
       recipeApiId = recipeId;
       recipeName = data.title;
     });
+  };
+
+  //*** After Page Load ***//
+  //=======================//
+
+  //Get logged in users user data (email/id)
+  $.get("/api/user_data").then(data => {
+    userData = data;
+    return userData;
   });
 
-  //On click of favorite button in recipe name header, send the recipe name and its ID from the spoonacular API to the DB
+  //Hide recipe container on page load
+  $("#recipe-results").hide();
+  $("#recipe-container").hide();
+
+  //On page load search
+  apiSearch(passedRecipe);
+
+  // Send saved recipes to the saved recipes dropdown
+  // $.get("api/recipes").then(results => {
+  //   results.forEach(recipe => {
+  //     if (recipe.UserId === userData.id) {
+  //       $(".dropdown-menu").append(
+  //         `<a class="dropdown-item" id=${recipe.recipe_api_id} href="/recipe?${recipe.recipe_name}">${recipe.recipe_name}</a>
+  //         <div class="dropdown-divider"></div>`
+  //       );
+  //     }
+  //   });
+  // });
+
+  //Search if user uses search feature in the navbar
+  $("#search").on("submit", function(e) {
+    e.preventDefault();
+    $("#recipe-container").hide();
+    $(".recipe-name").empty();
+    const $searchText = $("#search-text")
+      .val()
+      .trim();
+    apiSearch($searchText);
+  });
+
+  //This call will be triggered when the user clicks on a recipe provide from the initial search results.
+  $(document).on("click", ".recipe-option", function(e) {
+    e.preventDefault();
+    //Recipe id for the API call
+    recipeId = $(this).data("id");
+    getAndDisplayRecipe(recipeId);
+  });
+
+  //On click of favorite button in recipe name header, send the recipe name and its ID from the spoonacular API to the DB then alert the user
   $(document).on("click", "#fave-btn", function(e) {
     e.preventDefault();
     $.ajax({
@@ -115,6 +132,7 @@ $(document).ready(() => {
         recipe_name: recipeName
       }
     });
+    alert(`${recipeName} has been saved to your favorites`);
   });
 
   //On click of add ingredient button in the recipe, send the ingredient name and its ID from the spoonacular API to the DB
