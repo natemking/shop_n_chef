@@ -17,7 +17,7 @@ body {
 
 h1 {
     font-size: 30px !important;
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Bebas Neue', sans-serif;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -47,7 +47,7 @@ li {
 
 
 #nav1 {
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Bebas Neue', sans-serif;
     background-color: rgba(255,255,255,0.5);
     font-weight:bold;
     font-size:large;
@@ -74,7 +74,7 @@ li {
     font-size: 50px;
     color: black;
     background-color: #FDBB46;;
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Bebas Neue', sans-serif;
     margin-bottom: 5rem;
 }
 
@@ -108,7 +108,7 @@ li {
     margin-left: 10px;
     border: none;
     cursor:pointer;
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Bebas Neue', sans-serif;
 
 }
 
@@ -122,7 +122,7 @@ cursor:pointer;
 
 .instructions {
     font-size: 20px;
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 .no-check {
@@ -149,7 +149,7 @@ cursor:pointer;
     border-width: 1px;
 }
 
-@media screen and (max-width: 1081px) {
+@media screen and (max-width: 1500px) {
     img {
         max-width: 450px;
         height: auto;
@@ -157,8 +157,14 @@ cursor:pointer;
 }
     #ingredient-list {
         font-size: 15px;
-        font-family: 'Bebas Neue', cursive;
+        font-family: 'Bebas Neue', sans-serif;
+        font-weight: 100;
     }
+
+    .recipe-option {
+        font-family: 'Bebas Neue', sans-serif;
+    }
+    
     .row {
         display: flex;
         width: 100%;
@@ -168,7 +174,7 @@ cursor:pointer;
 @media screen and (max-width: 768px) {
     h1 {
         font-size: 50%;
-        font-family: 'Bebas Neue', cursive;
+        font-family: 'Bebas Neue', sans-serif;
     }
     .recipe-name {
          width: 95%;
@@ -187,7 +193,7 @@ cursor:pointer;
     .recipe-name {
         width: 100%;
         justify-content: center;
-        font-family: 'Bebas Neue', cursive;
+        font-family: 'Bebas Neue', sans-serif;
     }
 
     img {
