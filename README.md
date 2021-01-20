@@ -97,15 +97,15 @@ Our styling was created using Bootstrap for our navbar, buttons and user input f
 
 ## Screenshots
 
-<!-- ![app gif](public/assets/images/screenshots/burger_banquet.gif)
+![Sreenshot–Error message if user does not have an account](public/assets/images/screenshots/burger_banquet.gif)
 <br>
 
-_App Functionality_
+<!-- _App Functionality_
 <br>
 
 ![mobile resolution](public/assets/images/screenshots/burger_banquet_mobile.png)
 
-_Mobile Responsiveness_ -->
+_Mobile Responsiveness_ --> -->
 
 ## License
 Licensed under the MIT License. Copyright © 2021
