@@ -32,10 +32,10 @@
         <section class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="members.html">Shopping List<span class="sr-only">Shopping List</span></a>
+              <a class="nav-link" href="/members">Shopping List<span class="sr-only">Shopping List</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="login.html">Log In</a>
+              <a class="nav-link" href="/login">Log In</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/logout">Log Out</a>
@@ -90,22 +90,20 @@ Create a button in index.ejs that will submit the user input into the database. 
 
                 <!-- {{!-- //Setup the index.ejs to have the template that ejs can render onto.
 Create a button in index.ejs that will submit the user input into the database. --}} -->
-
-
-                <!-- {{!-- Setting up a background image and styling the text to appear on top of it --}} -->
-                <!-- We will want to add padding to and format the table once we integrate the css styling -->
-                <!-- Dynamically add items to the shopping list using EJS -->
-                <section class="boxed">
-                  <h4>Add Items To Your Shopping List</h4>
-                  <form id="add-item">
-                    <input id="item-name-text" type=text placeholder="Add to list">
-                    <button type="submit">Submit</button>
-                  </form>
-                  <!-- List for items in shopping list. Items added dynamically via members.js -->
-                  <section>
-                    <ul id="shopping-list" class="list-group">
-                    </ul>
-              </div>
+              <!-- {{!-- Setting up a background image and styling the text to appear on top of it --}} -->
+              <!-- We will want to add padding to and format the table once we integrate the css styling -->
+              <!-- Dynamically add items to the shopping list using EJS -->
+              <section class="boxed">
+                <h4>Add Items To Your Shopping List</h4>
+                <form id="add-item">
+                  <input id="item-name-text" type=text placeholder="Add to list">
+                  <button class="btn btn-success" type="submit">Add Item</button>
+                </form>
+                <!-- List for items in shopping list. Items added dynamically via members.js -->
+                <section>
+                  <ul id="shopping-list" class="list-group">
+                  </ul>
+                  <button id="delete-all-btn" class="btn btn-danger" type="button">Empty List</button>
             </div>
           </div>
       </section>

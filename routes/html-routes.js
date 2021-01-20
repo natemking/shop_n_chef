@@ -7,7 +7,7 @@ module.exports = function(app) {
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.render("/members");
     }
     res.render("login", { title: "Login" });
   });
@@ -15,7 +15,7 @@ module.exports = function(app) {
   app.get("/signup", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.render("/members");
     }
     res.render("signup", { title: "Sign Up" });
   });
@@ -23,7 +23,7 @@ module.exports = function(app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, (req, res) => {
-    res.render("members", { title: "Passport Authentication" });
+    res.render("members", { title: "Shopping List" });
   });
 
   //Route to the recipe page if user is authenticated

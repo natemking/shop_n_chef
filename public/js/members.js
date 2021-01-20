@@ -35,6 +35,10 @@ $(document).ready(() => {
         );
       }
     });
+    //Show the delete button when items are added to the list
+    $("#shopping-list").children().length > 0
+      ? $("#delete-all-btn").show()
+      : $("#delete-all-btn").hide();
   });
 
   //Send added item to the backend to be added to Items table
@@ -42,7 +46,7 @@ $(document).ready(() => {
     e.preventDefault();
     $.ajax({
       type: "POST",
-      url: "api/items",
+      url: "/api/items",
       data: {
         item_name: $("#item-name-text")
           .val()
@@ -101,7 +105,7 @@ $(document).ready(() => {
       //Send the edited item value and its DB ID to the backend
       $.ajax({
         type: "PUT",
-        url: "api/items",
+        url: "/api/items",
         data: {
           item_name: editedItem,
           id: itemId
@@ -121,6 +125,18 @@ $(document).ready(() => {
     $.ajax({
       type: "DELETE",
       url: `/api/items/${id}`
+    }).then(() => {
+      location.reload();
+    });
+  });
+
+  //Delete all items
+  $("#delete-all-btn").on("click", function(e) {
+    e.preventDefault();
+
+    $.ajax({
+      type: "DELETE",
+      url: `/api/list_destroy/${userData.id}`
     }).then(() => {
       location.reload();
     });

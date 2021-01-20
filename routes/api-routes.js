@@ -75,7 +75,7 @@ module.exports = function(app) {
 
   //*** Local API call to DB ***//
   //============================//
-  //Routes for GET, POST, PUT, & DELETE shopping list items
+  //Routes for GET, POST, PUT, & DELETE single shopping list items
   app
     .route("/api/items/:id?")
     .get(async (req, res) => {
@@ -116,6 +116,16 @@ module.exports = function(app) {
         res.status(404).json(err);
       }
     });
+
+  //Delete all shopping list items
+  app.delete("/api/list_destroy/:userid", async (req, res) => {
+    try {
+      await db.Item.destroy({ where: { UserId: req.params.userid } });
+      res.status(202).end();
+    } catch (err) {
+      res.status(404).json(err);
+    }
+  });
 
   //Routes for GET, POST, & DELETE recipes
   app
