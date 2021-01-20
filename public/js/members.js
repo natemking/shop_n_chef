@@ -1,13 +1,47 @@
 /* eslint-disable prefer-arrow-callback */
+import { getUserData } from "./getuserdata.js";
+
 $(document).ready(() => {
-  //Storage variable for signed in users email and id data
+  //*** Global variables ***//
+  //========================//
+
+  //Storage variable for signed in users data
   let userData;
 
-  //Get user data from DB
-  $.get("/api/user_data").then(data => {
-    $(".member-name").text(data.email);
-    userData = data;
-  });
+  //*** On Page Load ***//
+  //====================//
+  (async () => {
+    //Get logged in users user data (email/id)
+    const results = await getUserData();
+
+    // Display the items for the signed in user
+    $.get("api/items").then(results => {
+      results.forEach(item => {
+        if (item.UserId === userData.id) {
+          $("#shopping-list").append(
+            `<li class="list-group-item list-group-item-dark d-flex flex-row justify-content-between">
+            <button type="button" class="check-btn btn btn-success" data-item-id=${item.id}>
+              <i class="fa fa-check" aria-hidden="true"></i>
+            </button>
+            <span id=${item.id} class="item no-strike">${item.item_name}</span>
+            <button type="button" class="delete-btn btn btn-danger" data-item-id=${item.id}>
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+          </li>`
+          );
+        }
+      });
+      //Show the delete all button if there are any items in the list
+      $("#shopping-list").children().length > 0
+        ? $("#delete-all-btn").show()
+        : $("#delete-all-btn").hide();
+    });
+    //Send user data up to global scope
+    userData = results;
+  })();
+
+  //*** Event Listeners ***//
+  //=======================//
 
   //Send the recipe search text to recipe.html
   $("#search").on("submit", function(e) {
@@ -18,30 +52,7 @@ $(document).ready(() => {
     $(location).attr("href", `/recipe?${$searchText}`);
   });
 
-  // Display the items for the signed in user
-  $.get("api/items").then(results => {
-    results.forEach(item => {
-      if (item.UserId === userData.id) {
-        $("#shopping-list").append(
-          `<li class="list-group-item list-group-item-dark d-flex flex-row justify-content-between">
-            <button type="button" class="check-btn btn btn-success" data-item-id=${item.id}>
-              <i class="fa fa-check" aria-hidden="true"></i>
-            </button>
-            <span id=${item.id} class="item no-strike">${item.item_name}</span>
-            <button type="button" class="delete-btn btn btn-danger" data-item-id=${item.id}>
-              <i class="fa fa-times" aria-hidden="true"></i>
-            </button>
-          </li>`
-        );
-      }
-    });
-    //Show the delete button when items are added to the list
-    $("#shopping-list").children().length > 0
-      ? $("#delete-all-btn").show()
-      : $("#delete-all-btn").hide();
-  });
-
-  //Send added item to the backend to be added to Items table
+  //On add item submission, add the item to the DB
   $("#add-item").on("submit", function(e) {
     e.preventDefault();
     $.ajax({
@@ -57,6 +68,7 @@ $(document).ready(() => {
     });
   });
 
+  //Cross-off item
   //If checkbox is clicked, strikethrough is toggled on the item
   $(document).on("click", ".check-btn", function(e) {
     e.preventDefault();
@@ -65,6 +77,7 @@ $(document).ready(() => {
       .toggleClass("strike");
   });
 
+  //Edit item
   //When item is clicked it becomes a text input for editing
   $(document).on("click", ".item", function() {
     const currentItem = $(this)
@@ -77,12 +90,14 @@ $(document).ready(() => {
   });
 
   //Cancel item edit
+  //When clicking anywhere the item is no longer editable
   $(document).on("blur", "input.edit", function() {
     $(this)
       .find(".item")
       .unwrap();
   });
 
+  //Save item edit
   //Hit enter key to post new, edited item name
   $(document).on("keyup", "input.edit", function(e) {
     e.preventDefault();
@@ -118,7 +133,8 @@ $(document).ready(() => {
     }
   });
 
-  //Delete a list item when the x box is clicked
+  //Delete an item
+  //When x button is clicked item is deleted
   $(document).on("click", ".delete-btn", function(e) {
     e.preventDefault();
     const id = $(this).data("item-id");
@@ -133,7 +149,6 @@ $(document).ready(() => {
   //Delete all items
   $("#delete-all-btn").on("click", function(e) {
     e.preventDefault();
-
     $.ajax({
       type: "DELETE",
       url: `/api/list_destroy/${userData.id}`

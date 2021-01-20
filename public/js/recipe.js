@@ -1,10 +1,13 @@
 /* eslint-disable prefer-arrow-callback */
+import { getUserData } from "./getuserdata.js";
+
 $(document).ready(() => {
   //*** Global variables ***//
   //========================//
+
   //Text value of the searched for recipe from members.html
   const passedRecipe = location.search.replace("?", "");
-  //Storage variable for user data
+  //Storage variable for signed in users data
   let userData;
   //Storage variables for later AJAX calls
   let recipeApiId;
@@ -44,7 +47,6 @@ $(document).ready(() => {
     //Show the recipe container
     $("#recipe-container").show();
     $("#directions-container").show();
-
     //If there has already been a recipe chosen, clear out that DOM
     if (
       $("#ingredient-list").children().length > 0 ||
@@ -54,7 +56,6 @@ $(document).ready(() => {
       $("#instructions").empty();
       $("#recipe-image").empty();
     }
-
     //AJAX call to get the recipe data
     $.ajax({
       type: "GET",
@@ -90,25 +91,30 @@ $(document).ready(() => {
     });
   };
 
-  //*** After Page Load ***//
+  //*** On Page Load ***//
+  //====================//
+
+  (async () => {
+    //Get logged in users user data (email/id)
+    const results = await getUserData();
+
+    //Hide recipe container on page load
+    $("#recipe-container").hide();
+    $("#directions-container").hide();
+
+    //On page load, if the url parameter is a word, search for recipe options otherwise if the parameter is a recipe ID, search for that exact recipe
+    passedRecipe.match(/^[a-z]/gi)
+      ? recipeSearch(passedRecipe)
+      : getAndDisplayRecipe(passedRecipe);
+
+    //Send user data up to global scope
+    userData = results;
+  })();
+
+  //*** Event Listeners ***//
   //=======================//
 
-  //Get logged in users user data (email/id)
-  $.get("/api/user_data").then(data => {
-    userData = data;
-    return userData;
-  });
-
-  //Hide recipe container on page load
-  $("#recipe-container").hide();
-  $("#directions-container").hide();
-
-  //On page load, if the url parameter is a word search for recipe options otherwise if the parameter is a recipe ID search for that exact recipe
-  passedRecipe.match(/^[a-z]/gi)
-    ? recipeSearch(passedRecipe)
-    : getAndDisplayRecipe(passedRecipe);
-
-  //Search for a recipe if user uses search feature in the navbar
+  //Search for a list of recipes from the navbar
   $("#search").on("submit", function(e) {
     e.preventDefault();
     $("#recipe-container").hide();
@@ -120,15 +126,15 @@ $(document).ready(() => {
     recipeSearch($searchText);
   });
 
-  //This call will be triggered when the user clicks on a recipe provide from the initial search results.
+  //Display the details of a recipe when a user clicks on the recipe name
   $(document).on("click", ".recipe-option", function(e) {
     e.preventDefault();
     //Recipe id for the API call
-    recipeId = $(this).data("id");
+    const recipeId = $(this).data("id");
     getAndDisplayRecipe(recipeId);
   });
 
-  //On click of favorite button in recipe name header, send the recipe name and its ID from the spoonacular API to the DB then alert the user
+  //On favorite button click, save recipe to the DB
   $(document).on("click", "#fave-btn", function(e) {
     e.preventDefault();
     $.ajax({
@@ -143,11 +149,11 @@ $(document).ready(() => {
     alert(`${recipeName} has been saved to your favorites`);
   });
 
-  //On click of add ingredient button in the recipe, send the ingredient name and its ID from the spoonacular API to the DB
+  //On click of an ingredient name, send that ingredient to the shopping list and add a check mark next to it.
   $(document).on("click", "#ingredient-text", function(e) {
     e.preventDefault();
     //Get this items name
-    itemName = $(this).data("name");
+    const itemName = $(this).data("name");
     //Toggle checkmark if user adds ingredients
     $(this)
       .next()
