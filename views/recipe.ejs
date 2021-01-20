@@ -1,122 +1,126 @@
 <%- include('partials/header'); -%>
-<!-- {{!-- Linking fontawesome --}} -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-<!-- {{!-- Linking css --}} -->
-<link href="stylesheets/recipe-styles.css" rel="stylesheet">
-<%- include('partials/body'); -%>
-<main class="container hero-image">
-  
-    <nav class="navbar navbar-expand-lg navbar-light bg-gradien-transparent" id="nav1">
+  <!-- {{!-- Linking fontawesome --}} -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <!-- {{!-- Linking css --}} -->
+  <link href="stylesheets/recipe-styles.css" rel="stylesheet">
+  <%- include('partials/body'); -%>
+    <div class="background">
+      <main class="container hero-image">
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <nav class="navbar navbar-expand-lg navbar-light bg-gradien-transparent" id="nav1">
 
-      <section class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="members.html">Shopping List<span class="sr-only">Shopping List</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="login.html">Log In</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/logout">Log Out</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Saved Recipes 
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <!-- <a class="dropdown-item" href="#">First Recipe</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <section class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="members.html">Shopping List<span class="sr-only">Shopping List</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Log Out</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Saved Recipes
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <!-- <a class="dropdown-item" href="#">First Recipe</a>
               <a class="dropdown-item" href="#">Second Recipe</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Third Recipe</a> -->
-            </div>
-          </li>
-        </ul>
-        <form id="search" class="form-inline my-2 my-lg-0">
-          <!-- <a>Search for a recipe  </a> -->
-          <input id="search-text" class="form-control mr-sm-2" type="text" placeholder="Find a recipe">
-          <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </section>
-    </nav>
+                </div>
+              </li>
+            </ul>
+            <form id="search" class="form-inline my-2 my-lg-0">
+              <!-- <a>Search for a recipe  </a> -->
+              <input id="search-text" class="form-control mr-sm-2" type="text" placeholder="Find a recipe">
+              <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </section>
+        </nav>
 
 
-    <h1 class="recipe-name">
-      
+        <h1 class="recipe-name">
 
-    </h1>
-    <!-- Container for the recipe search results. -->
-    <div class="row" id="recipe-results">
-        <section class="col-lg-8 col-md-10 col-sm-12 col-xs-12 float-center">
+
+        </h1>
+        <!-- Container for the recipe search results. -->
+        <div class="row" id="recipe-results">
+          <section class="col-lg-7 col-md-10 col-sm-12 col-xs-12 float-center">
             <div class="jumbotron recipe-holder">
-              <img src="assets/imgs/logo.png" class= "d-block img-fluid" alt="Shop & Chef Logo" id="logo">
-                <h1 class="recipe-header"> Recipes </h1>
+              <img src="assets/imgs/hat.png" class="d-block img-fluid" alt="Shop & Chef Logo" id="logo">
+              <h1 class="recipe-header"> Recipes </h1>
 
-                <ul id="recipes-list">
+              <ul id="recipes-list">
 
-                </ul>
+              </ul>
             </div>
 
-        </section>
+          </section>
 
-    </div>
+        </div>
 
-    <!-- Container for all recipe related info -->
-    <div class="row" id="recipe-container">
-        <!-- Container for the recipe ingredients -->
-        <section class="col-lg-12 col-md-12 col-sm-12">
+        <!-- Container for all recipe related info -->
+        <div class="row" id="recipe-container">
+          <!-- Container for the recipe ingredients -->
+          <section class="col-lg-12 col-md-12 col-sm-12">
             <div class="jumbotron ingredient-holder">
 
-                <!-- Container for the recipe ingredients -->
-                <h1 class="ingredient-header"> Ingredients </h1>
+              <!-- Container for the recipe ingredients -->
+              <h1 class="ingredient-header"> Ingredients </h1>
 
-                <div class="icon">
-                    <i class="fa fa-cart-plus fa-3x" aria-hidden="true"></i>
+              <div class="icon">
+                <i class="fa fa-cart-plus fa-3x" aria-hidden="true"></i>
+              </div>
+
+              <section class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
+
+                <div class="image-container" id="recipe-image">
+
                 </div>
-                
-                <section class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+              </section>
 
-                    <div class="image-container" id="recipe-image">
-                  
-                    </div>
-                </section>
+              <section class="col-lg-5 col-md-12 col-xs-12">
+                <div class=ingredient-list-holder>
+                  <ul id="ingredient-list">
 
-                <section class="col-lg-4 col-md-12 col-xs-12">
-                    <div class=ingredient-list-holder>
-                        <ul id="ingredient-list">
-
-                        </ul>
-                    </div>
-                </section>
+                  </ul>
+                </div>
+              </section>
 
             </div>
-        </section>
-        <div class="row" id="directions-container">
-            <section class="col-lg-12 col-md-12 col-sm-12">
-
-                <!-- Container for the recipe instructions -->
-                <div class="jumbotron directions-holder">
-
-                    <h1 class="directions-header"> Directions</h1>
-
-                    <div class="icon">
-                        <i class="fa fa-cutlery fa-3x" aria-hidden="true"></i>
-                    </div>
-
-                    <ul id="instructions">
-
-                    </ul>
-                </div>
-            </section>
+          </section>
         </div>
-       
+        <div class="row" id="directions-container">
+          <section class="col-lg-12 col-md-12 col-sm-12">
+
+            <!-- Container for the recipe instructions -->
+            <div class="jumbotron directions-holder">
+
+              <h1 class="directions-header"> Directions</h1>
+
+              <div class="icon">
+                <i class="fa fa-cutlery fa-3x" aria-hidden="true"></i>
+              </div>
+
+              <ul id="instructions">
+
+              </ul>
+            </div>
+          </section>
+        </div>
+
     </div>
     </section>
-  </main>
-<%- include('partials/scripts'); -%>
-<script type="text/javascript" src="./js/recipe.js"></script>
-<%- include('partials/footer'); -%>
+    </main>
+    </div>
+    </section>
+    </main>
+    <%- include('partials/scripts'); -%>
+      <script type="text/javascript" src="./js/recipe.js"></script>
+      <%- include('partials/footer'); -%>

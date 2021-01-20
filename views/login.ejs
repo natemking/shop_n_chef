@@ -1,43 +1,46 @@
 <%- include('partials/header'); -%>
-    <!-- Linking custom google fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&family=Sedgwick+Ave&display=swap" rel="stylesheet">
-    <!-- {{!-- Linking css --}} -->
-    <link href="stylesheets/meredith_style.css" rel="stylesheet" />
+<!-- Linking custom google fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script&family=Sedgwick+Ave&display=swap" rel="stylesheet">
+<!-- {{!-- Linking css --}} -->
+<link href="stylesheets/login_styles.css" rel="stylesheet" />
+
 <%- include('partials/body'); -%>
-    <section class="hero-image">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3">
-                    <div class="boxed">
-                        <img src="assets/imgs/logo.png" alt="Shop & Chef Logo" id="logo">
-                        <p>
-                        <h1>Welcome!</p>
-                            <p>Time to shop before you chef
-                        </h1>
-                        </p>
-                        <h4>Please enter your login information, or sign up for a new account below</h4>
-                    </div>
-                    <div class="boxed">
-                        <form class="login">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="email-input" placeholder="Email" />
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="password-input"
-                                    placeholder="Password" />
-                            </div>
-                            <button type="submit" class="btn btn-default">Login</button>
-                        </form>
-                        <br />
-                        <p>Or sign up <a href="signup.html">here</a></p>
-                    </div>
-                </div>
-            </div>
+<div class="background">
+  <section class="hero-image">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="boxed">
+            <img src="assets/imgs/logo.png" alt="Shop & Chef Logo" id="logo">
+            <p>
+            <h1>Welcome!</p>
+              <p>Time to shop before you chef
+            </h1>
+            </p>
+            <h4>Please enter your login information, or sign up for a new account below</h4>
+          </div>
+          <div class="boxed">
+            <form class="login">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="email-input" placeholder="Email" />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="password-input" placeholder="Password" />
+              </div>
+              <button type="submit" class="btn btn-default">Login</button>
+            </form>
+            <br />
+            <p>Or sign up <a href="signup.html">here</a></p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
+  </section>
+</div>
 <%- include('partials/scripts'); -%>
-    <script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
 <%- include('partials/footer'); -%>
