@@ -29,6 +29,12 @@ h2 {
     text-align: center;
     font-size: 10px;
 }
+    
+.h2 {
+    font-size: 120%;
+    font-family:'Bebas Neue', sans-serif; 
+    }
+
 
 img {
         max-width: 500px;
@@ -136,6 +142,7 @@ cursor:pointer;
 .fa {
     color: #FDBB46;
     -webkit-text-stroke: .75px black; 
+    cursor: pointer;
 }
 
 .fa-heart {
@@ -176,6 +183,7 @@ cursor:pointer;
         font-size: 50%;
         font-family: 'Bebas Neue', sans-serif;
     }
+    
     .recipe-name {
          width: 95%;
      }
@@ -199,5 +207,8 @@ cursor:pointer;
     img {
         max-width: 425px;
         height: auto;
+}
+#cart {
+    cursor: pointer;
 }
 }
