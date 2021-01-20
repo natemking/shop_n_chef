@@ -127,7 +127,7 @@ module.exports = function(app) {
     }
   });
 
-  //Routes for GET, POST, & DELETE recipes
+  //Routes for GET, POST, & DELETE recipes. Delete is for a saved recipe
   app
     .route("/api/recipes/:id?")
     .get(async (req, res) => {
@@ -153,7 +153,7 @@ module.exports = function(app) {
     })
     .delete(async (req, res) => {
       try {
-        await db.Item.destroy({ where: { id: req.params.id } });
+        await db.Recipe.destroy({ where: { id: req.params.id } });
         res.status(202).end();
       } catch (err) {
         res.status(404).json(err);
