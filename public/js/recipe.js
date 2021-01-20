@@ -17,15 +17,24 @@ $(document).ready(() => {
       type: "GET",
       url: `/api/get_recipes/${text}`
     }).then(data => {
-      //display the results to a DOM element
-      $("#recipe-results").show();
-      // jQuery.empty() syntax will clear out each search result as user inputs different ingredients
-      $("#recipes-list").empty();
-      data.results.forEach(recipe => {
+      //Display the results to the DOM
+      //If there are no results
+      if (data.results.length === 0) {
+        $("#recipe-results").show();
+        $("#recipes-list").empty();
         $("#recipes-list").append(
-          `<li data-id=${recipe.id} class="recipe-option">${recipe.title}</li>`
+          `<p>OH NO! We couldn't find any recipes. Please try again</p>`
         );
-      });
+        //If there are results
+      } else {
+        $("#recipe-results").show();
+        $("#recipes-list").empty();
+        data.results.forEach(recipe => {
+          $("#recipes-list").append(
+            `<li data-id=${recipe.id} class="recipe-option">${recipe.title}</li>`
+          );
+        });
+      }
     });
   };
 
