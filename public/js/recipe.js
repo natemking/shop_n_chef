@@ -108,19 +108,7 @@ $(document).ready(() => {
     ? recipeSearch(passedRecipe)
     : getAndDisplayRecipe(passedRecipe);
 
-  // Send saved recipes to the saved recipes dropdown
-  $.get("api/recipes").then(results => {
-    results.forEach(recipe => {
-      if (recipe.UserId === userData.id) {
-        $(".dropdown-menu").append(
-          `<a class="dropdown-item" id=${recipe.recipe_api_id} href="/recipe?${recipe.recipe_api_id}">${recipe.recipe_name}</a>
-          <div class="dropdown-divider"></div>`
-        );
-      }
-    });
-  });
-
-  //Search if user uses search feature in the navbar
+  //Search for a recipe if user uses search feature in the navbar
   $("#search").on("submit", function(e) {
     e.preventDefault();
     $("#recipe-container").hide();
