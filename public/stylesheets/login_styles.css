@@ -11,7 +11,7 @@
   }
   
   img {
-    max-width: 15%;
+    max-width: 30%;
     height: auto;
     padding: 10px;
   }
@@ -55,13 +55,13 @@
     padding-right: 4rem;
   }
   
-  .container-fluid{
+  /* .container-fluid{
     position: absolute;
     margin: 20px;
     width: auto;
     font-size: 150%;
   }
-  
+   */
   #nav1 {
     background-color: rgba(255,255,255,0.5);
     font-weight:bold;
@@ -97,20 +97,21 @@
   }
 
   h1{
-    font-size: 175%;
+    font-size: 130%;
   }
 
   h2{
-    font-size: 130%
+    font-size: 100%
   }
 
   h4{
-    font-size: 110%;
+    font-size: 100%;
   }
 
   label {
     color: #FDBB46;
     -webkit-text-stroke: .75px black; 
+    font-size: 30px;
   }
 
   .btn {

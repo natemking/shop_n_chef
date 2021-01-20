@@ -10,10 +10,28 @@
     margin-top: 40px;
   }
   
+  .login {
+    -webkit-text-stroke: .75px black; 
+    font-size: 30px;
+  }
+
+  label {
+    color: #FDBB46;
+    -webkit-text-stroke: .75px black; 
+    font-size: 30px;
+  }
+  a {
+    -webkit-text-stroke: .75px black; 
+  }
+  
   img {
-    max-width: 15%;
+    max-width: 30%;
     height: auto;
     padding: 10px;
+  }
+
+  .form-control{
+    font-size: 25px;
   }
 
   a:link {
@@ -29,11 +47,6 @@
     text-align: center;
     color: white;
     background: rgba(255,255,255,0.5);
-  }
-  
-  .center {
-    margin-left: auto;
-    margin-right: auto;
   }
   
   .container-fluid{
@@ -75,11 +88,11 @@
     font-family: 'Bebas Neue', sans-serif;
   }
 
-  .form-control {
-    font-size: 50px;
-  }
-
-  #button {
+  .btn {
+    background-color: #A87B50;
+    padding: 5px 20px;
+    border-width: 1px;
+    border-color: black;
     font-size: 20px;
   }
 
