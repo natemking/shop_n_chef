@@ -1,6 +1,15 @@
-.background {
+body {
+    font-size: 15px;
     background-image: url("assets/images/background.jpg");
-    height: auto;
+    height: 1500px;
+    width: auto;
+    background-position: center;
+    background-size: cover;
+}
+
+.background {
+    
+    height: 1500px;
     width: auto;
     background-position: center;
     background-size: cover;   
@@ -22,7 +31,7 @@ h2 {
 }
 
 img {
-        max-width: 450px;
+        max-width: 500px;
         height: auto;
         float: left;
 }
@@ -70,7 +79,7 @@ li {
 }
 
 .jumbotron{
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
     margin-top: 20px;
 }
 
@@ -82,6 +91,10 @@ li {
 .row {
     display: flex;
     width: 100%;
+}
+
+.ingredient-holder{
+    padding-right: 1rem;
 }
 
 .ingredient-holder, .directions-holder, .recipe-holder
@@ -98,8 +111,16 @@ li {
 
 }
 
-.ingredient-holder {
+.ingredient-list {
+    float: right;
+}
+
+ul {
 cursor:pointer;
+}
+
+.instructions {
+    font-size: 20px;
 }
 
 .no-check {
@@ -110,23 +131,14 @@ cursor:pointer;
     visibility: visible;
 }
 
-@media screen and (max-width: 992px) {
-    .bio-box {
-         width: 80%;
-         font-size: 90%;
-     }
-    .image-container {
-        width: 50%;
-        justify-content: center;
-    }
-    #logo {
-        max-width: 50%;
-        display:block !important;
-        margin-left:auto;
-        margin-right:auto;
-    }
-    li {
-        font-size: 20px;
+@media screen and (max-width: 1081px) {
+    img {
+        max-width: 450px;
+        height: auto;
+        float: left;
+}
+    #ingredient-list {
+        font-size: 15px;
     }
     .row {
         display: flex;
@@ -150,13 +162,17 @@ cursor:pointer;
         text-align: center
     }
     li {
-        font-size: 20px;
+        font-size: 15px;
     }
     .recipe-name {
         width: 100%;
         justify-content: center;
     }
+
+    img {
+        max-width: 425px;
+        height: auto;
 }
-@media screen and (max-width: 600px) {
+}
 
 }}
