@@ -37,7 +37,6 @@ $(document).ready(() => {
     $("#recipe-container").show();
     $("#directions-container").show();
 
-
     //If there has already been a recipe chosen, clear out that DOM
     if (
       $("#ingredient-list").children().length > 0 ||
