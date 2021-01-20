@@ -2,12 +2,11 @@
 $(document).ready(() => {
   //*** Global variables ***//
   //========================//
-
   //Text value of the searched for recipe from members.html
   const passedRecipe = location.search.replace("?", "");
   //Storage variable for user data
   let userData;
-  //storage variables for later AJAX calls
+  //Storage variables for later AJAX calls
   let recipeApiId;
   let recipeName;
 
@@ -85,6 +84,7 @@ $(document).ready(() => {
       );
       //Add recipe instructions to the DOM
       $("#instructions").append(data.instructions);
+      //Set global variables with results data
       recipeApiId = recipeId;
       recipeName = data.title;
     });
