@@ -69,6 +69,7 @@ The application also alows users to save and retrieve their favorite recipes.
 
 ### Sequelize
   Sequelize is a promise-based Node.js ORM which we utilized to streamline usage with MySQL.
+
   Installation:
 
 `$ npm install --save sequelize`
@@ -78,6 +79,9 @@ The application also alows users to save and retrieve their favorite recipes.
 
 Express is the application that we utlized the most through node.js. The servers that we created route to the HTML data and the other to API for the data. 
 We are running the GET, POST, PUT, & DELETE methods for the data. We render the necessary data to the front end using EJS.
+We also used Passport nodejs middleware for user authentication.
+Passport Installation: 
+`npm i passport` 
 
 ### EJS View Engine
 We use EJS Tempelating Engine to render our data to be viewed on the front end. 
@@ -89,7 +93,7 @@ We use jQuery to handle event listeners and AJAX calls to the backend. Our AJAX 
 
 
 ### CSS
-Our styling was created using Bootstrap for our navbar, buttons and user input fields. We used Bootswatch for our theme, and quite a bit of custom css written for placing the background image, font styling, custom color schemes and other fine tuning of the application's appearance. 
+Our styling was created using Bootstrap for our navbar, buttons and user input fields. We used Bootswatch for our theme, and quite a bit of custom css written for placing the background image, font styling, custom color schemes and other fine tuning of the application's appearance. Included in our custom css styling is a google font to style all of the text in our application. 
 
 ## Screenshots
 
