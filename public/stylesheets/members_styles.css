@@ -7,7 +7,7 @@
 }
 
 p {
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Bebas Neue', sans-serif;
   font-weight: bold;
 }
 
@@ -67,7 +67,7 @@ a:link {
 #nav1 {
   background-color: rgba(255,255,255,0.5);
   font-size:large;
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Bebas Neue', sans-serif;
   font-weight: bold;
 }
 
@@ -78,11 +78,11 @@ a:link {
 .body {
  font-weight:bold;
  justify-content: center;
- font-family: 'Bebas Neue', cursive;
+ font-family: 'Bebas Neue', sans-serif;
 }
 
 .container {
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Bebas Neue', sans-serif;
   font-size: 20px;
   justify-content: center;
 }
@@ -102,7 +102,7 @@ img {
 }
 
 .shopping-list {
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 #button1 {
