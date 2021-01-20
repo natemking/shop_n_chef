@@ -32,7 +32,6 @@
     text-align: center;
     justify-content: center;
     color: white;
-    
   }
   
   .center {
@@ -52,12 +51,14 @@
     position: absolute;
     margin: 20px;
     width: auto;
+    font-size: 150%;
   }
   
   #nav1 {
     background-color: rgba(255,255,255,0.5);
     font-weight:bold;
     font-size:large;
+    font-family: 'Playfair Display SC', serif;
   }
   
   .card {
@@ -68,12 +69,12 @@
   
    font-weight:bold;
    /* font: italic small-caps bold 16px/2 cursive; */
-   font-family: 'Oleo Script', cursive;
+   font-family: 'Playfair Display SC', serif;
   }
   
   .container {
-    font-family: 'Oleo Script', cursive;
-    font-size: 20px;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 25px;
   }
   
   .no-strike {
@@ -85,5 +86,13 @@
   }
   
   .shopping-list {
-    font-family: 'Sedgwick Ave', cursive;
+    font-family: 'Playfair Display SC', serif;
+  }
+
+  h1{
+    font-size: 150%;
+  }
+
+  h4{
+    font-size: 110%;
   }
