@@ -14,7 +14,7 @@ const db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
 const app = express();
-//
+
 // sets up engine for rendering via ejs
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
