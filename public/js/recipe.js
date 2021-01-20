@@ -35,6 +35,7 @@ $(document).ready(() => {
     $("#recipe-results").hide();
     //Show the recipe container
     $("#recipe-container").show();
+    $("#directions-container").show();
 
     //If there has already been a recipe chosen, clear out that DOM
     if (
@@ -90,8 +91,8 @@ $(document).ready(() => {
   });
 
   //Hide recipe container on page load
-  $("#recipe-results").hide();
   $("#recipe-container").hide();
+  $("#directions-container").hide();
 
   //On page load, if the url parameter is a word search for recipe options otherwise if the parameter is a recipe ID search for that exact recipe
   passedRecipe.match(/^[a-z]/gi)
@@ -114,6 +115,7 @@ $(document).ready(() => {
   $("#search").on("submit", function(e) {
     e.preventDefault();
     $("#recipe-container").hide();
+    $("#directions-container").hide();
     $(".recipe-name").empty();
     const $searchText = $("#search-text")
       .val()
