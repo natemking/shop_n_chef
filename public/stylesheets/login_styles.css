@@ -58,7 +58,7 @@
     background-color: rgba(255,255,255,0.5);
     font-weight:bold;
     font-size:large;
-    font-family: 'Playfair Display SC', serif;
+    font-family: 'Bebas Neue', cursive;
   }
   
   .card {
@@ -68,12 +68,11 @@
   .body {
   
    font-weight:bold;
-   /* font: italic small-caps bold 16px/2 cursive; */
-   font-family: 'Playfair Display SC', serif;
+   font-family: 'Bebas Neue', cursive;
   }
   
   .container {
-    font-family: 'Playfair Display SC', serif;
+    font-family: 'Bebas Neue', cursive;
     font-size: 25px;
   }
   
@@ -86,7 +85,7 @@
   }
   
   .shopping-list {
-    font-family: 'Playfair Display SC', serif;
+    font-family: 'Bebas Neue', cursive;
   }
 
   h1{
@@ -95,4 +94,9 @@
 
   h4{
     font-size: 110%;
+  }
+
+  #button1 {
+    font-size: 20px;
+    background-color: #4CAF50;
   }

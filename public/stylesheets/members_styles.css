@@ -67,7 +67,7 @@ a:link {
 #nav1 {
   background-color: rgba(255,255,255,0.5);
   font-size:large;
-  font-family: 'Monsteratt', sans-serif;
+  font-family: 'Bebas Neue', cursive;
   font-weight: bold;
 }
 
@@ -77,8 +77,6 @@ a:link {
 
 .body {
  font-weight:bold;
- /* font: italic small-caps bold 16px/2 cursive; */
- /* font-family: 'Eczar', sans-serif; */
  justify-content: center;
  font-family: 'Bebas Neue', cursive;
 }

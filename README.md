@@ -38,7 +38,7 @@ Team 1
 
 # Links
 
-* [Deployed Link]()
+* [Deployed Link](https://shop-n-chef.herokuapp.com/)
 
 # Introduction
   Shop & Chef is a disposable grocery list application. 
@@ -71,16 +71,25 @@ The application also alows users to save and retrieve their favorite recipes.
   Sequelize is a promise-based Node.js ORM which we utilized to streamline usage with MySQL.
   Installation:
 
-$ npm install --save sequelize
+`$ npm install --save sequelize`
 
 
 ### Node.js
 
+Express is the application that we utlized the most through node.js. The servers that we created route to the HTML data and the other to API for the data. 
+We are running the GET, POST, PUT, & DELETE methods for the data. We render the necessary data to the front end using EJS.
+
 ### EJS View Engine
+We use EJS Tempelating Engine to render our data to be viewed on the front end. 
+Installation
+`$ npm install ejs`
  
 ### jQuery
+We use jQuery to handle event listeners and AJAX calls to the backend. Our AJAX calls were responsible for our functions carrying data from user logins, sign ups, recipe retreival and display. 
+
 
 ### CSS
+Our styling was created using Bootstrap for our navbar, buttons and user input fields. We used Bootswatch for our theme, and quite a bit of custom css written for placing the background image, font styling, custom color schemes and other fine tuning of the application's appearance. 
 
 ## Screenshots
 

@@ -55,7 +55,6 @@
   .body {
   
    font-weight:bold;
-   /* font: italic small-caps bold 16px/2 cursive; */
    font-family: 'Oleo Script', cursive;
   }
   
@@ -74,4 +73,8 @@
   
   .shopping-list {
     font-family: 'Sedgwick Ave', cursive;
+  }
+
+  .form-control {
+    font-size: 50px;
   }
