@@ -17,8 +17,8 @@ Team 1
 ![express badge](https://img.shields.io/badge/express.js%20-%23404d59.svg?&style=flat)
 ![ejs badge](https://img.shields.io/badge/%20EJS%20-%23B4CA65.svg?&style=flatColor=white%22/)
 ![sequelize badge](https://img.shields.io/badge/Sequelize-%2304AFEF.svg?&style=flat&logoColor=white)
-
-<!-- ![bootstrap badge](https://img.shields.io/badge/bootstrap%20-%23563D7C.svg?&style=flat&logo=bootstrap&logoColor=white) -->
+![heroku badge](https://img.shields.io/badge/heroku%20-%23430098.svg?&style=for-the-badge&logo=heroku&logoColor=white)
+![bootstrap badge](https://img.shields.io/badge/bootstrap%20-%23563D7C.svg?&style=flat&logo=bootstrap&logoColor=white)
 
 ---
 ## Table of Contents
@@ -68,6 +68,11 @@ To streamline the experience of creating a shopping list based on recipes, Shop 
 The application also alows users to save and retrieve their favorite recipes. 
 
 ### Sequelize
+  Sequelize is a promise-based Node.js ORM which we utilized to streamline usage with MySQL.
+  Installation:
+
+$ npm install --save sequelize
+
 
 ### Node.js
 

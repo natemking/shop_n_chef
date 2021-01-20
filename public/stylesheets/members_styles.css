@@ -74,12 +74,13 @@ a:link {
 .body {
  font-weight:bold;
  /* font: italic small-caps bold 16px/2 cursive; */
- font-family: 'Eczar', sans-serif;
+ /* font-family: 'Eczar', sans-serif; */
  justify-content: center;
+ font-family: 'Bebas Neue', cursive;
 }
 
 .container {
-  font-family: 'Monsteratt', sans-serif;;
+  font-family: 'Bebas Neue', cursive;
   font-size: 20px;
   justify-content: center;
 }
@@ -99,5 +100,6 @@ img {
 }
 
 .shopping-list {
-  font-family: 'Eczar', sans-serif;
+  font-family: 'Bebas Neue', cursive;
 }
+
