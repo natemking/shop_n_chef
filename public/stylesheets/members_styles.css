@@ -51,7 +51,11 @@ a:link {
   size: 25%;
   padding-left: 4rem;
   padding-right: 4rem;
-  padding-bottom: 4rem;
+  padding-bottom: 2.5rem;
+}
+
+#delete-all-btn {
+  margin-top: 20px;
 }
 
 .container-fluid{

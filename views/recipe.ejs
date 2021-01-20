@@ -16,78 +16,75 @@
         <h1 class="recipe-name">
 
         </h1>
-        <!-- Container for the recipe search results. -->
-        <div class="row" id="recipe-results">
-          <section class="col-lg-7 col-md-10 col-sm-12 col-xs-12 float-center">
-            <div class="jumbotron recipe-holder">
-              <img src="assets/imgs/hat.png" class="d-block img-fluid" alt="Shop & Chef Logo" id="logo">
-              <h1 class="recipe-header"> Recipes </h1>
+    <!-- Container for the recipe search results. -->
+    <div class="row" id="recipe-results">
+      <section class="col-lg-7 col-md-10 col-sm-12">
+        <div class="jumbotron recipe-holder">
+          <img src="assets/imgs/hat.png" class="d-block img-fluid" alt="Shop & Chef Logo" id="logo">
+          <h1 class="recipe-header"> Recipes </h1>
 
-              <ul id="recipes-list">
+          <ul id="recipes-list">
 
-              </ul>
-            </div>
-
-          </section>
-
+          </ul>
         </div>
 
-        <!-- Container for all recipe related info -->
-        <div class="row" id="recipe-container">
+      </section>
+
+    </div>
+
+    <!-- Container for all recipe related info -->
+    <div class="row" id="recipe-container">
+      <!-- Container for the recipe ingredients -->
+      <section class="col-lg-12 col-md-12 col-sm-12">
+        <div class="jumbotron ingredient-holder">
+
           <!-- Container for the recipe ingredients -->
-          <section class="col-lg-12 col-md-12 col-sm-12">
-            <div class="jumbotron ingredient-holder">
+          <h1 class="ingredient-header"> Ingredients </h1>
+          <div class="icon">
+            <i class="fa fa-cart-plus fa-3x" aria-hidden="true"></i>
+          </div>
+          <div class="row" id="recipe-components">
+            <section class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
 
-              <!-- Container for the recipe ingredients -->
-              <h1 class="ingredient-header"> Ingredients </h1>
+              <div class="image-container" id="recipe-image">
 
-              <div class="icon">
-                <i class="fa fa-cart-plus fa-3x" aria-hidden="true"></i>
               </div>
+            </section>
+            <section class="col-lg-4 col-md-12 col-xs-12">
+              <div class=ingredient-list-holder>
+                <ul id="ingredient-list">
 
-              <section class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
-
-                <div class="image-container" id="recipe-image">
-
-                </div>
-              </section>
-
-              <section class="col-lg-5 col-md-12 col-xs-12">
-                <div class=ingredient-list-holder>
-                  <ul id="ingredient-list">
-
-                  </ul>
-                </div>
-              </section>
-
-            </div>
-          </section>
-        </div>
-        <div class="row" id="directions-container">
-          <section class="col-lg-12 col-md-12 col-sm-12">
-
-            <!-- Container for the recipe instructions -->
-            <div class="jumbotron directions-holder">
-
-              <h1 class="directions-header"> Directions</h1>
-
-              <div class="icon">
-                <i class="fa fa-cutlery fa-3x" aria-hidden="true"></i>
+                </ul>
               </div>
+            </section>
+          </div>
+      </section>
+    </div>
+    <div class="row" id="directions-container">
+      <section class="col-lg-12 col-md-12 col-sm-12">
 
-              <ul id="instructions">
+        <!-- Container for the recipe instructions -->
+        <div class="jumbotron directions-holder">
 
-              </ul>
-            </div>
-          </section>
+          <h1 class="directions-header"> Directions</h1>
+
+          <div class="icon">
+            <i class="fa fa-cutlery fa-3x" aria-hidden="true"></i>
+          </div>
+
+          <ul id="instructions">
+
+          </ul>
         </div>
+      </section>
+    </div>
 
-    </div>
-    </section>
-    </main>
-    </div>
-    </section>
-    </main>
-    <%- include('partials/scripts'); -%>
-      <script type="text/javascript" src="./js/recipe.js"></script>
-      <%- include('partials/footer'); -%>
+</div>
+</section>
+</main>
+</div>
+</section>
+</main>
+<%- include('partials/scripts'); -%>
+<script type="text/javascript" src="./js/recipe.js"></script>
+<%- include('partials/footer'); -%>
