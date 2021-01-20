@@ -6,9 +6,17 @@
   background-size: cover;   
 }
 
-form.signup,
-form.login {
-  margin-top: 50px;
+p {
+  font-family: 'Monsteratt', sans-serif;
+  font-weight: bold;
+}
+
+h4 {
+  margin-top: 2rem;
+}
+
+input {
+  margin-bottom: 20px;
 }
 
 #shopList {
@@ -18,7 +26,7 @@ form.login {
 .container {
   position: relative;
   text-align: center;
-  color: white;
+  justify-content: center;
 }
 
 .center {
@@ -41,7 +49,9 @@ a:link {
   border: 1px solid green ;
   background: rgba(255,255,255,0.5);
   size: 25%;
-  padding: 4rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-bottom: 4rem;
 }
 
 .container-fluid{
@@ -52,8 +62,9 @@ a:link {
 
 #nav1 {
   background-color: rgba(255,255,255,0.5);
-  font-weight:bold;
   font-size:large;
+  font-family: 'Monsteratt', sans-serif;
+  font-weight: bold;
 }
 
 .card {
@@ -61,15 +72,16 @@ a:link {
 }
 
 .body {
-
  font-weight:bold;
  /* font: italic small-caps bold 16px/2 cursive; */
- font-family: 'Oleo Script', cursive;
+ font-family: 'Eczar', sans-serif;
+ justify-content: center;
 }
 
 .container {
-  font-family: 'Oleo Script', cursive;
+  font-family: 'Monsteratt', sans-serif;;
   font-size: 20px;
+  justify-content: center;
 }
 
 .no-strike {
@@ -87,5 +99,5 @@ img {
 }
 
 .shopping-list {
-  font-family: 'Sedgwick Ave', cursive;
+  font-family: 'Eczar', sans-serif;
 }
