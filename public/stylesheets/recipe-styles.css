@@ -25,7 +25,7 @@ h1 {
 }
 
 img {
-    max-width: 500px;
+    max-width: 100%;
     height: auto;
     float: left;
 }
@@ -48,6 +48,8 @@ ul {
 
 .container {
     justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -119,6 +121,10 @@ ul {
     float: right;
 }
 
+.ingredient-item {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
 .instructions {
     font-size: 20px;
     font-family: 'Bebas Neue', sans-serif;
@@ -166,9 +172,8 @@ ul {
 
 @media screen and (max-width: 1500px) {
     img {
-        max-width: 450px;
+        max-width: 100%;
         height: auto;
-        float: left;
 }
     #ingredient-list {
         font-size: 15px;
@@ -185,6 +190,29 @@ ul {
         width: 100%;
         justify-content: center;
     }
+}
+
+@media screen and (max-width: 1000px) {
+    img {
+        max-width: 100%;
+        height: auto;
+}
+    #ingredient-list {
+        font-size: 15px;
+        font-family: 'Bebas Neue', sans-serif;
+        font-weight: 100;
+    }
+
+    .recipe-option {
+        font-family: 'Bebas Neue', sans-serif;
+    }
+    
+    .row {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+}
 
 @media screen and (max-width: 768px) {
     h1 {
@@ -215,6 +243,7 @@ ul {
     img {
         max-width: 425px;
         height: auto;
+        margin: auto;
 }
 
 @media (max-width: 600px){
@@ -226,5 +255,10 @@ ul {
       float: right
     }
     }
+    img {
+        max-width: 350px;
+        height: auto;
+        margin-left: 15%
+    }    
 
 }}
