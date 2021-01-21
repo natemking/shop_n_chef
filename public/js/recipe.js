@@ -23,20 +23,23 @@ $(document).ready(() => {
       //Display the results to the DOM
       //If there are no results
       if (data.results.length === 0) {
-        $("#recipe-results").show();
         $("#recipes-list").empty();
         $("#recipes-list").append(
           `<p>OH NO! We couldn't find any recipes. Please try again</p>`
         );
+        $("#recipe-results").show();
         //If there are results
       } else {
-        $("#recipe-results").show();
+        //Empty previous results
         $("#recipes-list").empty();
+        //Loop through results and add to recipe-results container
         data.results.forEach(recipe => {
           $("#recipes-list").append(
             `<li data-id=${recipe.id} class="recipe-option">${recipe.title}</li>`
           );
         });
+        //show recipe results container
+        $("#recipe-results").show();
       }
     });
   };
