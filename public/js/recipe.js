@@ -86,9 +86,17 @@ $(document).ready(() => {
         )
         .css("background-color", "#FDBB46");
       // Add recipe image to DOM
-      $("#recipe-image").append(
-        `<img src=${data.image} alt="picture of recipe" />`
-      );
+      //If there is a img display from spoonacular, display it
+      if (data.image !== undefined) {
+        $("#recipe-image").append(
+          `<img src=${data.image} alt="picture of ${data.title}" />`
+        );
+        //If there is no image from spoonacular, display our default image
+      } else {
+        $("#recipe-image").append(
+          `<img src="assets/imgs/Pot.jpeg" alt="picture of food cooking" />`
+        );
+      }
       //Add recipe instructions to the DOM
       $("#instructions").append(data.instructions);
       //Show the recipe and instructions container
