@@ -8,27 +8,32 @@ $(document).ready(() => {
   //Storage variable for signed in users data
   let userData;
 
+  //Function to dynamically add items to the shopping list
+  const addToList = (id, itemName) => {
+    $("#shopping-list").append(
+      `<li class="list-group-item list-group-item-dark d-flex flex-row justify-content-between">
+            <button type="button" class="check-btn btn btn-success" data-item-id=${id}>
+              <i class="fa fa-check" aria-hidden="true"></i>
+            </button>
+            <span id=${id} class="item no-strike">${itemName}</span>
+            <button type="button" class="delete-btn btn btn-danger" data-item-id=${id}>
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+          </li>`
+    );
+  };
+
   //*** On Page Load ***//
   //====================//
   (async () => {
     //Get logged in users user data (email/id)
-    const results = await getUserData();
+    const userResults = await getUserData();
 
     // Display the items for the signed in user
     $.get("api/items").then(results => {
       results.forEach(item => {
         if (item.UserId === userData.id) {
-          $("#shopping-list").append(
-            `<li class="list-group-item list-group-item-dark d-flex flex-row justify-content-between">
-            <button type="button" class="check-btn btn btn-success" data-item-id=${item.id}>
-              <i class="fa fa-check" aria-hidden="true"></i>
-            </button>
-            <span id=${item.id} class="item no-strike">${item.item_name}</span>
-            <button type="button" class="delete-btn btn btn-danger" data-item-id=${item.id}>
-              <i class="fa fa-times" aria-hidden="true"></i>
-            </button>
-          </li>`
-          );
+          addToList(item.id, item.item_name);
         }
       });
       //Show the delete all button if there are any items in the list
@@ -38,7 +43,7 @@ $(document).ready(() => {
     });
 
     //Send user data up to global scope
-    userData = results;
+    userData = userResults;
   })();
 
   //*** Event Listeners ***//
@@ -56,16 +61,29 @@ $(document).ready(() => {
   //On add item submission, add the item to the DB
   $("#add-item").on("submit", function(e) {
     e.preventDefault();
+    //Set the users item name to a variable
+    const itemName = $("#item-name-text")
+      .val()
+      .trim();
+    //Clear the input text field
+    $("#item-name-text").val("");
+
+    //AJAX call to post item to DB
     $.ajax({
       type: "POST",
       url: "/api/items",
       data: {
-        item_name: $("#item-name-text")
-          .val()
-          .trim()
+        item_name: itemName
       }
     }).then(() => {
-      location.reload();
+      //Get the newly posted item and add to the shopping list dynamically
+      $.get("api/items").then(results => {
+        results.forEach(item => {
+          if (item.item_name === itemName) {
+            addToList(item.id, item.item_name);
+          }
+        });
+      });
     });
   });
 
@@ -135,7 +153,7 @@ $(document).ready(() => {
   });
 
   //Delete an item
-  //When x button is clicked item is deleted
+  //When x button is clicked item is deleted in the DB and dynamically removed from the list
   $(document).on("click", ".delete-btn", function(e) {
     e.preventDefault();
     const id = $(this).data("item-id");
@@ -143,7 +161,7 @@ $(document).ready(() => {
       type: "DELETE",
       url: `/api/items/${id}`
     }).then(() => {
-      location.reload();
+      this.closest("li").remove();
     });
   });
 
