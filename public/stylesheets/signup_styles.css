@@ -7,7 +7,7 @@
   }
   
   form.signup {
-    margin-top: 40px;
+    margin-top: 20px;
   }
   
   .login {
@@ -20,6 +20,7 @@
     -webkit-text-stroke: .75px black; 
     font-size: 30px;
   }
+
   a {
     -webkit-text-stroke: .75px black; 
   }
@@ -98,4 +99,5 @@
 
   h2{
     font-size: 30px;
+    margin-top: 20px;
   }
