@@ -7,7 +7,7 @@ h2 {
 }
 
 h4 {
-  font-size: 100%;
+  font-size: 30px;
   margin-bottom: 40px;
 }
 
@@ -63,7 +63,7 @@ a:link {
   
 .boxed {
     border: 1px solid green ;
-    background: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.4);
     size: 25%;
     padding-left: 4rem;
     padding-right: 4rem;

@@ -5,7 +5,7 @@ export const dropDown = (apiId, name, id) => {
   $(".dropdown-menu").append(
     `<div>
         <div class="d-flex justify-content-between">    
-        <a class="dropdown-item id=${apiId} href="/recipe?${apiId}">
+        <a class="dropdown-item" id=${apiId} href="/recipe?${apiId}">
              ${name}
             </a>
             <span>
