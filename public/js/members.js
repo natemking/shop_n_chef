@@ -11,7 +11,7 @@ $(document).ready(() => {
   //Function to dynamically add items to the shopping list
   const addToList = (id, itemName) => {
     $("#shopping-list").append(
-      `<li class="list-group-item list-group-item-dark d-flex flex-row justify-content-between">
+      `<li class="list-group-item d-flex flex-row justify-content-between">
             <button type="button" class="check-btn btn btn-success" data-item-id=${id}>
               <i class="fa fa-check" aria-hidden="true"></i>
             </button>

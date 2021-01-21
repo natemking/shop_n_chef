@@ -106,6 +106,10 @@ img {
   font-family: 'Bebas Neue', sans-serif;
 }
 
+.list-group-item{
+  background-image: url("../assets/imgs/linedpaper.png");
+}
+
 #button1 {
   font-size: 20px;
   background-color: #4CAF50;
