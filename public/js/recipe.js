@@ -174,7 +174,7 @@ $(document).ready(() => {
         }
       });
 
-      //If there are no saved recipes or no duplicates, save to DB. Otherwise let the user know it is a duplicate save. 
+      //If there are no saved recipes or no duplicates, save to DB. Otherwise let the user know it is a duplicate save.
       if (results.length === 0 || dupeCheck.length === 0) {
         $.ajax({
           type: "POST",
