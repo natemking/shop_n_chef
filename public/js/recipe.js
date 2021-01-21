@@ -174,10 +174,8 @@ $(document).ready(() => {
         }
       });
 
-      //If there are duplicates then alert the user. Otherwise add the recipe to the DB and display in navbar dropdown.
-      if (results.length !== 0 && dupeCheck.length > 0) {
-        alert("You have already saved this recipe!");
-      } else {
+      //If there are no saved recipes or no duplicates, save to DB. Otherwise let the user know it is a duplicate save. 
+      if (results.length === 0 || dupeCheck.length === 0) {
         $.ajax({
           type: "POST",
           url: "/api/recipes",
@@ -191,6 +189,8 @@ $(document).ready(() => {
         dropDown(recipeApiId, recipeName, userData.id);
         //Alert user recipe saved
         alert(`${recipeName} has been saved to your favorites`);
+      } else {
+        alert("You have already saved this recipe!");
       }
     });
   });
