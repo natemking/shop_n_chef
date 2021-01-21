@@ -24,27 +24,26 @@ h1 {
     text-decoration: underline;
 }
 
-h2 {
-    color: black;
-    text-align: center;
-    font-size: 10px;
-}
-    
-.h2 {
-    font-size: 120%;
-    font-family:'Bebas Neue', sans-serif; 
-    }
-
-
 img {
-        max-width: 500px;
-        height: auto;
-        float: left;
+    max-width: 500px;
+    height: auto;
+    float: left;
 }
 
 li {
-    font-size: 20px;
-    margin-top: 5px;
+font-size: 20px;
+margin-top: 5px;
+}
+
+ul {
+    cursor:pointer;
+}
+ 
+.h2 {
+    font-size: 120%;
+    font-family:'Bebas Neue', sans-serif; 
+    color: black;
+    text-align: center;
 }
 
 .container {
@@ -114,15 +113,10 @@ li {
     border: none;
     cursor:pointer;
     font-family: 'Bebas Neue', sans-serif;
-
 }
 
 .ingredient-list {
     float: right;
-}
-
-ul {
-cursor:pointer;
 }
 
 .instructions {
@@ -169,7 +163,6 @@ cursor:pointer;
 .logout{
     margin-left: 15px;
 }
-
 
 @media screen and (max-width: 1500px) {
     img {
@@ -223,9 +216,7 @@ cursor:pointer;
         max-width: 425px;
         height: auto;
 }
-#cart {
-    cursor: pointer;
-}
+
 @media (max-width: 600px){
     #search-text {
       width: 60%
