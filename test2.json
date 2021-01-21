@@ -1,0 +1,346 @@
+{
+    "vegetarian": false,
+    "vegan": false,
+    "glutenFree": true,
+    "dairyFree": true,
+    "veryHealthy": false,
+    "cheap": false,
+    "veryPopular": false,
+    "sustainable": false,
+    "weightWatcherSmartPoints": 14,
+    "gaps": "no",
+    "lowFodmap": false,
+    "aggregateLikes": 56,
+    "spoonacularScore": 78.0,
+    "healthScore": 19.0,
+    "creditsText": "Afrolems",
+    "license": "CC BY 4.0",
+    "sourceName": "Afrolems",
+    "pricePerServing": 186.02,
+    "extendedIngredients": [
+        {
+            "id": 1012034,
+            "aisle": "Spices and Seasonings",
+            "image": "seasoning.png",
+            "consistency": "solid",
+            "name": "Spice Rub",
+            "original": "1.5 Tablespoons of Suya Spice",
+            "originalString": "1.5 Tablespoons of Suya Spice",
+            "originalName": "Suya Spice",
+            "amount": 1.5,
+            "unit": "Tablespoons",
+            "meta": [],
+            "metaInformation": [],
+            "measures": {
+                "us": {
+                    "amount": 1.5,
+                    "unitShort": "Tbsps",
+                    "unitLong": "Tbsps"
+                },
+                "metric": {
+                    "amount": 1.5,
+                    "unitShort": "Tbsps",
+                    "unitLong": "Tbsps"
+                }
+            }
+        },
+        {
+            "id": 5006,
+            "aisle": "Meat",
+            "image": "whole-chicken.jpg",
+            "consistency": "solid",
+            "name": "chicken",
+            "original": "1 pound Chicken",
+            "originalString": "1 pound Chicken",
+            "originalName": "Chicken",
+            "amount": 1.0,
+            "unit": "pound",
+            "meta": [],
+            "metaInformation": [],
+            "measures": {
+                "us": {
+                    "amount": 1.0,
+                    "unitShort": "lb",
+                    "unitLong": "pound"
+                },
+                "metric": {
+                    "amount": 453.592,
+                    "unitShort": "g",
+                    "unitLong": "grams"
+                }
+            }
+        },
+        {
+            "id": 2009,
+            "aisle": "Spices and Seasonings",
+            "image": "chili-powder.jpg",
+            "consistency": "solid",
+            "name": "chilli powder",
+            "original": "1 teaspoon of chilli powder",
+            "originalString": "1 teaspoon of chilli powder",
+            "originalName": "chilli powder",
+            "amount": 1.0,
+            "unit": "teaspoon",
+            "meta": [],
+            "metaInformation": [],
+            "measures": {
+                "us": {
+                    "amount": 1.0,
+                    "unitShort": "tsp",
+                    "unitLong": "teaspoon"
+                },
+                "metric": {
+                    "amount": 1.0,
+                    "unitShort": "tsp",
+                    "unitLong": "teaspoon"
+                }
+            }
+        },
+        {
+            "id": 4582,
+            "aisle": "Oil, Vinegar, Salad Dressing",
+            "image": "vegetable-oil.jpg",
+            "consistency": "liquid",
+            "name": "cooking oil",
+            "original": "1 cooking spoon groundnut oil",
+            "originalString": "1 cooking spoon groundnut oil",
+            "originalName": "cooking spoon groundnut oil",
+            "amount": 1.0,
+            "unit": "",
+            "meta": [],
+            "metaInformation": [],
+            "measures": {
+                "us": {
+                    "amount": 1.0,
+                    "unitShort": "",
+                    "unitLong": ""
+                },
+                "metric": {
+                    "amount": 1.0,
+                    "unitShort": "",
+                    "unitLong": ""
+                }
+            }
+        },
+        {
+            "id": 10014412,
+            "aisle": "Frozen",
+            "image": "ice-cubes.png",
+            "consistency": "solid",
+            "name": "ice cubes",
+            "original": "Seasoning cubes",
+            "originalString": "Seasoning cubes",
+            "originalName": "Seasoning",
+            "amount": 1.0,
+            "unit": "cubes",
+            "meta": [],
+            "metaInformation": [],
+            "measures": {
+                "us": {
+                    "amount": 1.0,
+                    "unitShort": "cubes",
+                    "unitLong": "cube"
+                },
+                "metric": {
+                    "amount": 1.0,
+                    "unitShort": "cubes",
+                    "unitLong": "cube"
+                }
+            }
+        },
+        {
+            "id": 11282,
+            "aisle": "Produce",
+            "image": "brown-onion.png",
+            "consistency": "solid",
+            "name": "onions",
+            "original": "Onions and Tomatoes for Garnishing",
+            "originalString": "Onions and Tomatoes for Garnishing",
+            "originalName": "Onions and Tomatoes for Garnishing",
+            "amount": 1.0,
+            "unit": "serving",
+            "meta": [
+                "for garnishing"
+            ],
+            "metaInformation": [
+                "for garnishing"
+            ],
+            "measures": {
+                "us": {
+                    "amount": 1.0,
+                    "unitShort": "serving",
+                    "unitLong": "serving"
+                },
+                "metric": {
+                    "amount": 1.0,
+                    "unitShort": "serving",
+                    "unitLong": "serving"
+                }
+            }
+        },
+        {
+            "id": 2047,
+            "aisle": "Spices and Seasonings",
+            "image": "salt.jpg",
+            "consistency": "solid",
+            "name": "salt",
+            "original": "Salt to taste",
+            "originalString": "Salt to taste",
+            "originalName": "Salt to taste",
+            "amount": 1.0,
+            "unit": "serving",
+            "meta": [
+                "to taste"
+            ],
+            "metaInformation": [
+                "to taste"
+            ],
+            "measures": {
+                "us": {
+                    "amount": 1.0,
+                    "unitShort": "serving",
+                    "unitLong": "serving"
+                },
+                "metric": {
+                    "amount": 1.0,
+                    "unitShort": "serving",
+                    "unitLong": "serving"
+                }
+            }
+        }
+    ],
+    "id": 716342,
+    "title": "Chicken Suya",
+    "readyInMinutes": 45,
+    "servings": 1,
+    "sourceUrl": "http://www.afrolems.com/2014/05/27/chicken-suya/",
+    "image": "https://spoonacular.com/recipeImages/716342-556x370.jpg",
+    "imageType": "jpg",
+    "summary": "Chicken Suya might be just the main course you are searching for. This recipe serves 1 and costs $3.22 per serving. Watching your figure? This gluten free, dairy free, and whole 30 recipe has <b>1070 calories</b>, <b>87g of protein</b>, and <b>71g of fat</b> per serving. If you have chicken, salt, cooking spoon groundnut oil, and a few other ingredients on hand, you can make it. To use up the onions you could follow this main course with the <a href=\"https://spoonacular.com/recipes/candy-corn-cupcakes-63881\">Candy Corn Cupcakes</a> as a dessert. This recipe from Afrolems has 56 fans. From preparation to the plate, this recipe takes approximately <b>45 minutes</b>. All things considered, we decided this recipe <b>deserves a spoonacular score of 94%</b>. This score is tremendous. Try <a href=\"https://spoonacular.com/recipes/suya-nigerian-chicken-skewers-113497\">Suya (Nigerian Chicken Skewers)</a>, <a href=\"https://spoonacular.com/recipes/suya-swordfish-6571\">Suya Swordfish</a>, and <a href=\"https://spoonacular.com/recipes/i-aint-chicken-chicken-crispy-roasted-chicken-breasts-with-orange-and-cardamom-310658\">I Ain't Chicken Chicken: Crispy Roasted Chicken Breasts with Orange and Cardamom</a> for similar recipes.",
+    "cuisines": [],
+    "dishTypes": [
+        "lunch",
+        "main course",
+        "main dish",
+        "dinner"
+    ],
+    "diets": [
+        "gluten free",
+        "dairy free"
+    ],
+    "occasions": [],
+    "winePairing": {},
+    "instructions": "Heat the oven to 500 F.Wash and season the chicken with the Suya spice, chilli powder, seasoning cubes, salt and drizzle the oil over it.Place the chicken in the oven and grill for 40 minutes. Check the chicken occasionally and flip on both sides so it can cook properly.Serve hot garnished with the onions and tomato and a bit of suya spice sprinkled over the chicken.",
+    "analyzedInstructions": [
+        {
+            "name": "",
+            "steps": [
+                {
+                    "number": 1,
+                    "step": "Heat the oven to 500 F.Wash and season the chicken with the Suya spice, chilli powder, seasoning cubes, salt and drizzle the oil over it.",
+                    "ingredients": [
+                        {
+                            "id": 0,
+                            "name": "seasoning cube",
+                            "localizedName": "seasoning cube",
+                            "image": "stock-cube.jpg"
+                        },
+                        {
+                            "id": 2009,
+                            "name": "chili powder",
+                            "localizedName": "chili powder",
+                            "image": "chili-powder.jpg"
+                        },
+                        {
+                            "id": 5006,
+                            "name": "whole chicken",
+                            "localizedName": "whole chicken",
+                            "image": "whole-chicken.jpg"
+                        },
+                        {
+                            "id": 2047,
+                            "name": "salt",
+                            "localizedName": "salt",
+                            "image": "salt.jpg"
+                        },
+                        {
+                            "id": 4582,
+                            "name": "cooking oil",
+                            "localizedName": "cooking oil",
+                            "image": "vegetable-oil.jpg"
+                        }
+                    ],
+                    "equipment": [
+                        {
+                            "id": 404784,
+                            "name": "oven",
+                            "localizedName": "oven",
+                            "image": "oven.jpg",
+                            "temperature": {
+                                "number": 500.0,
+                                "unit": "Fahrenheit"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "number": 2,
+                    "step": "Place the chicken in the oven and grill for 40 minutes. Check the chicken occasionally and flip on both sides so it can cook properly.",
+                    "ingredients": [
+                        {
+                            "id": 5006,
+                            "name": "whole chicken",
+                            "localizedName": "whole chicken",
+                            "image": "whole-chicken.jpg"
+                        }
+                    ],
+                    "equipment": [
+                        {
+                            "id": 404706,
+                            "name": "grill",
+                            "localizedName": "grill",
+                            "image": "grill.jpg"
+                        },
+                        {
+                            "id": 404784,
+                            "name": "oven",
+                            "localizedName": "oven",
+                            "image": "oven.jpg"
+                        }
+                    ],
+                    "length": {
+                        "number": 40,
+                        "unit": "minutes"
+                    }
+                },
+                {
+                    "number": 3,
+                    "step": "Serve hot garnished with the onions and tomato and a bit of suya spice sprinkled over the chicken.",
+                    "ingredients": [
+                        {
+                            "id": 5006,
+                            "name": "whole chicken",
+                            "localizedName": "whole chicken",
+                            "image": "whole-chicken.jpg"
+                        },
+                        {
+                            "id": 11282,
+                            "name": "onion",
+                            "localizedName": "onion",
+                            "image": "brown-onion.png"
+                        },
+                        {
+                            "id": 11529,
+                            "name": "tomato",
+                            "localizedName": "tomato",
+                            "image": "tomato.png"
+                        }
+                    ],
+                    "equipment": []
+                }
+            ]
+        }
+    ],
+    "originalId": null,
+    "spoonacularSourceUrl": "https://spoonacular.com/chicken-suya-716342"
+}
