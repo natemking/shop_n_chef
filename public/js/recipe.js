@@ -76,9 +76,11 @@ $(document).ready(() => {
         );
       });
       //Add recipe name to DOM
-      $(".recipe-name").html(
-        `${data.title} <button id="fave-btn" type="button" class="btn btn-danger"><i class="fa fa-heart" aria-hidden="true"></i></button>`
-      );
+      $(".recipe-name")
+        .html(
+          `${data.title} <button id="fave-btn" type="button" class="btn btn-danger"><i class="fa fa-heart" aria-hidden="true"></i></button>`
+        )
+        .css("background-color", "#FDBB46");
       // Add recipe image to DOM
       $("#recipe-image").append(
         `<img src=${data.image} alt="picture of recipe" />`
@@ -119,7 +121,9 @@ $(document).ready(() => {
     e.preventDefault();
     $("#recipe-container").hide();
     $("#directions-container").hide();
-    $(".recipe-name").empty();
+    $(".recipe-name")
+      .empty()
+      .css("background-color", "transparent");
     const $searchText = $("#search-text")
       .val()
       .trim();
