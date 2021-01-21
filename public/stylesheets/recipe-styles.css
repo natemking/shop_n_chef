@@ -154,6 +154,10 @@ cursor:pointer;
     border-width: 1px;
 }
 
+#shop-list-nav {
+    display: block;
+}
+
 @media screen and (max-width: 1500px) {
     img {
         max-width: 450px;

@@ -36,6 +36,7 @@ $(document).ready(() => {
         ? $("#delete-all-btn").show()
         : $("#delete-all-btn").hide();
     });
+
     //Send user data up to global scope
     userData = results;
   })();
