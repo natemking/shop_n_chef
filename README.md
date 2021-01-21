@@ -25,6 +25,7 @@ Team 1
  * [Links](#links)
  * [Introduction](#introduction)
  * [Description](#description)
+ * [Usage](#usage)
     + [Scope of Work](#scope-of-work)
     + [Sequelize](#sequelize)
     + [Node.js](#nodejs)
@@ -67,12 +68,26 @@ To streamline the experience of creating a shopping list based on recipes, Shop 
 
 The application also alows users to save and retrieve their favorite recipes. 
 
+# Usage/Installation
+## Running the application: 
+  In the terminal, run the following commands:
+* `npm install express`
+* `npm install express-session`
+* `npm install --save sequelize`
+* `npm install passport`
+* `npm install ejs`
+* After completing your installations, begin the server in your integrated terminal by running the command: `node server.js`
+
+If the connection is successful, you will see: 
+
+`🌎  Listening on port %s. Visit http://localhost:%s/ in your browser`
+
 ### Sequelize
   Sequelize is a promise-based Node.js ORM which we utilized to streamline usage with MySQL.
 
   Installation:
 
-`$ npm install --save sequelize`
+`npm install --save sequelize`
 
 
 ### Node.js
@@ -84,20 +99,25 @@ Passport Installation:
 `npm i passport` 
 
 ### EJS View Engine
-We use EJS Tempelating Engine to render our data to be viewed on the front end. 
+We use EJS Tempelating Engine to render our data as HTML Markup to be viewed on the front end. Through using EJS to create templates for our pages we were able to eliminate redundant code and create more streamlined, dry code for the application.  
 Installation
-`$ npm install ejs`
+` npm install ejs`
  
 ### jQuery
 We use jQuery to handle event listeners and AJAX calls to the backend. Our AJAX calls were responsible for our functions carrying data from user logins, sign ups, recipe retreival and display. 
 
+### Axios
+We utilized Axios to handle all of our third party API are done with Axios to keep them hidden. 
+
+### AJAX
+We used AJAX for all of our front end API calls. 
 
 ### CSS
 Our styling was created using Bootstrap for our navbar, buttons and user input fields. We used Bootswatch for our theme, and quite a bit of custom css written for placing the background image, font styling, custom color schemes and other fine tuning of the application's appearance. Included in our custom css styling is a google font to style all of the text in our application. 
 
 ## Screenshots
 
-![Sreenshot–Error message if user does not have an account](public/assets/images/screenshots/burger_banquet.gif)
+![Sreenshot–Error message if user does not have an account](public/assets/imgs/screenshot2.png)
 <br>
 
 <!-- _App Functionality_
@@ -105,19 +125,23 @@ Our styling was created using Bootstrap for our navbar, buttons and user input f
 
 ![mobile resolution](public/assets/images/screenshots/burger_banquet_mobile.png)
 
-_Mobile Responsiveness_ --> -->
+_Mobile Responsiveness_ --> 
 
 ## License
 Licensed under the MIT License. Copyright © 2021
 
 ## Credits
 
-<!-- * [Make elements be clickable after they are returned from an ajax call](https://stackoverflow.com/questions/6594226/jquery-class-selector-not-working/6602120)
+* [Importing and exporting ES6 modules](https://www.digitalocean.com/community/tutorials/js-modules-es6)
 
-* [Better Express routing for Node JS](https://caffeinecoding.com/better-express-routing-for-nodejs/)
+* [Using an AJAX call inside and async/await](https://petetasker.com/using-async-await-jquerys-ajax)  
 
-* [Toggle a Boolean](https://stackoverflow.com/questions/11604409/how-to-toggle-a-boolean)  -->
+* [NoobCoder YouTube Tutorial NodeJS For Beginners: Getting Started With EJS Templates With Express](https://www.youtube.com/watch?v=VM-2xSaDxJc) 
 
+* [EJS Template methods](https://ejs.co/)
 
+* [EJS Formatting reference](https://github.com/mde/ejs)
 
+* [Badges for Readme](https://github.com/Ileriayo/markdown-badges) 
 
+* [Google Fonts for customization](https://fonts.google.com/)
