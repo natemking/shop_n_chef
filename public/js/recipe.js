@@ -45,9 +45,7 @@ $(document).ready(() => {
   const getAndDisplayRecipe = recipeId => {
     //Hide the recipe search results
     $("#recipe-results").hide();
-    //Show the recipe container
-    $("#recipe-container").show();
-    $("#directions-container").show();
+
     //If there has already been a recipe chosen, clear out that DOM
     if (
       $("#ingredient-list").children().length > 0 ||
@@ -88,6 +86,9 @@ $(document).ready(() => {
       );
       //Add recipe instructions to the DOM
       $("#instructions").append(data.instructions);
+      //Show the recipe and instructions container
+      $("#recipe-container").show();
+      $("#directions-container").show();
       //Set global variables with results data
       recipeApiId = recipeId;
       recipeName = data.title;
