@@ -13,6 +13,8 @@ $(document).ready(() => {
   //Storage variables for later AJAX calls
   let recipeApiId;
   let recipeName;
+  //Storage variable for saved recipes duplicate check
+  let dupeCheck;
 
   //Function to make the ajax call to spoonacular to get a list of recipes that match the user search terms
   const recipeSearch = text => {
@@ -148,19 +150,41 @@ $(document).ready(() => {
   //On favorite button click, save recipe to the DB
   $(document).on("click", "#fave-btn", function(e) {
     e.preventDefault();
-    $.ajax({
-      type: "POST",
-      url: "/api/recipes",
-      data: {
-        user_id: userData.id,
-        recipe_api_id: recipeApiId,
-        recipe_name: recipeName
+    //Get the current saved recipes
+    $.get("api/recipes").then(results => {
+      //Check for duplicates that may have been saved by the user
+      results.forEach(recipe => {
+        if (recipe.UserId === userData.id) {
+          dupeCheck = results.filter(recipe => {
+            return (
+              $(this)
+                .parent()
+                .text()
+                .trim() === recipe.recipe_name
+            );
+          });
+        }
+      });
+
+      //If there are duplicates then alert the user. Otherwise add the recipe to the DB and display in navbar dropdown.
+      if (dupeCheck.length > 0) {
+        alert("You have already saved this recipe!");
+      } else {
+        $.ajax({
+          type: "POST",
+          url: "/api/recipes",
+          data: {
+            user_id: userData.id,
+            recipe_api_id: recipeApiId,
+            recipe_name: recipeName
+          }
+        });
+        //Saved recipe displays on DOM in navbar dropdown
+        dropDown(recipeApiId, recipeName, userData.id);
+        //Alert user recipe saved
+        alert(`${recipeName} has been saved to your favorites`);
       }
     });
-    //Saved recipe displays on DOM in navbar dropdwon
-    dropDown(recipeApiId, recipeName, userData.id);
-    //Alert user recipe saved
-    alert(`${recipeName} has been saved to your favorites`);
   });
 
   //On click of an ingredient name, send that ingredient to the shopping list and add a check mark next to it.
