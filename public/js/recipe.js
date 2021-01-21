@@ -1,5 +1,6 @@
 /* eslint-disable prefer-arrow-callback */
 import { getUserData } from "./getuserdata.js";
+import { dropDown } from "./navbar.js";
 
 $(document).ready(() => {
   //*** Global variables ***//
@@ -100,6 +101,8 @@ $(document).ready(() => {
     //Get logged in users user data (email/id)
     const results = await getUserData();
 
+    //Show nav bar link to shopping list
+    $("#shop-list-nav").show();
     //Hide recipe container on page load
     $("#recipe-container").hide();
     $("#directions-container").hide();
@@ -150,6 +153,9 @@ $(document).ready(() => {
         recipe_name: recipeName
       }
     });
+    //Saved recipe displays on DOM in navbar dropdwon
+    dropDown(recipeApiId, recipeName, userData.id);
+    //Alert user recipe saved
     alert(`${recipeName} has been saved to your favorites`);
   });
 
