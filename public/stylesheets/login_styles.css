@@ -54,9 +54,9 @@ a:link {
     text-align: center;
     justify-content: center;
     color: white;
-    background: rgba(255,255,255,0.5)
+    background-color: transparent !important;
   }
-  
+
 .center {
     margin-left: auto;
     margin-right: auto;
@@ -64,7 +64,7 @@ a:link {
   
 .boxed {
     border: 1px solid green ;
-    background: rgba(255,255,255,0.5)
+    background: rgba(255,255,255,0.5) !important;
     size: 25%;
     padding-left: 4rem;
     padding-right: 4rem;
