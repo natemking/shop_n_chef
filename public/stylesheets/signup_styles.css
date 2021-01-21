@@ -21,6 +21,11 @@
     font-size: 30px;
   }
 
+  h4{
+    font-size: 100%;
+  }
+
+
   a {
     -webkit-text-stroke: .75px black; 
   }
