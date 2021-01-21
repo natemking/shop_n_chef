@@ -158,6 +158,19 @@ cursor:pointer;
     display: block;
 }
 
+.dropdown-menu { 
+    font-size: 14px !important;
+}
+
+.fa-times {
+    margin-right: 5px
+  }
+
+.logout{
+    margin-left: 15px;
+}
+
+
 @media screen and (max-width: 1500px) {
     img {
         max-width: 450px;
@@ -213,4 +226,14 @@ cursor:pointer;
 #cart {
     cursor: pointer;
 }
-}
+@media (max-width: 600px){
+    #search-text {
+      width: 60%
+    }
+    .search-btn {
+      padding: .5rem;
+      float: right
+    }
+    }
+
+}}
