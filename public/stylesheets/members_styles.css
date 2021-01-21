@@ -113,3 +113,29 @@ img {
 #button {
   font-size: 20px;
 }
+
+.dropdown-menu { 
+  font-size: 14px !important;
+}
+
+.dropdown-menu { 
+  font-size: 14px !important;
+}
+
+.fa-times {
+  margin-right: 5px
+}
+
+.logout{
+  margin-left: 15px;
+}
+
+@media (max-width: 600px){
+#search-text {
+  width: 60%
+}
+.search-btn {
+  padding: .5rem;
+  float: right
+}
+}

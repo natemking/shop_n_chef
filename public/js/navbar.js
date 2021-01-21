@@ -4,9 +4,9 @@ import { getUserData } from "./getuserdata.js";
 export const dropDown = (apiId, name, id) => {
   $(".dropdown-menu").append(
     `<div>
-        <div class="d-flex justify-content-between">
-            <a class="dropdown-item" id=${apiId} href="/recipe?${apiId}">
-              ${name}
+        <div class="d-flex justify-content-between">    
+        <a class="dropdown-item id=${apiId} href="/recipe?${apiId}">
+             ${name}
             </a>
             <span>
               <i class="fa fa-times pr-1 delete-saved" aria-hidden="true" data-db-id=${id}></i>
