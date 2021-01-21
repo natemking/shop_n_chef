@@ -34,6 +34,7 @@ Team 1
     + [jQuery](#jquery)
     + [CSS](#css)
   * [Screenshots](#screenshots)
+  * [Areas for Future App Development](#future-development)
   * [License](#license)
   * [Credits](#credits)
 
@@ -46,7 +47,7 @@ Team 1
 
    This application is designed for those who are experienced home chefs, or newcomers to home cooking, combining food shopping with new, exciting, and inspiring recipe suggestions. 
 
-## Description/User Story 
+### Description/User Story 
   AS A USER I want an app that will allow me to link my grocery list with potential recipes
   WHEN I use Shop & Chef 
   THEN I will enter my log-in credentials
@@ -62,14 +63,14 @@ Team 1
 
 
 ### Scope of Work
-Users can easily add items of their choosing to thier shopping list. If they are looking for recipe inspiration, the app has a feature to seach for recipes based on main ingredient as well. 
+Users can easily add items of their choosing to their shopping list. If they are looking for recipe inspiration, the app has a feature to search for recipes based on the main ingredient as well. 
 
 To streamline the experience of creating a shopping list based on recipes, Shop & Chef allows users to add ingredients directly from recipes to their shopping list with a click on the ingredient. 
 
-The application also alows users to save and retrieve their favorite recipes. 
+The application also allows users to save and retrieve their favorite recipes. 
 
-# Usage/Installation
-## Running the application: 
+## Usage/Installation
+### Running the application: 
   In the terminal, run the following commands:
 * `npm install express`
 * `npm install express-session`
@@ -91,19 +92,19 @@ If the connection is successful, you will see:
 
 ### Node.js
 
-Express is the application that we utlized the most through node.js. The servers that we created route to the HTML data and the other to API for the data. 
+Express is the application that we utilized the most through node.js. The servers that we created route to the HTML data and the other to API for the data. 
 We are running the GET, POST, PUT, & DELETE methods for the data. We render the necessary data to the front end using EJS.
-We also used Passport nodejs middleware for user authentication.
+We also used Passport node js middleware for user authentication.
 Passport Installation: 
 `npm i passport` 
 
 ### EJS View Engine
-We use EJS Tempelating Engine to render our data as HTML Markup to be viewed on the front end. Through using EJS to create templates for our pages we were able to eliminate redundant code and create more streamlined, dry code for the application.  
+We use EJS Templating Engine to render our data as HTML Markup to be viewed on the front end. Through using EJS to create templates for our pages we were able to eliminate redundant code and create more streamlined, dry code for the application.  
 Installation
 ` npm install ejs`
  
 ### jQuery
-We use jQuery to handle event listeners and AJAX calls to the backend. Our AJAX calls were responsible for our functions carrying data from user logins, sign ups, recipe retreival and display. 
+We use jQuery to handle event listeners and AJAX calls to the backend. Our AJAX calls were responsible for our functions carrying data from user logins, sign ups, recipe retrieval and display. 
 
 ### Axios
 We utilized Axios to handle all of our third party API are done with Axios to keep them hidden. 
@@ -114,7 +115,8 @@ We used AJAX for all of our front end API calls.
 ### CSS
 Our styling was created using Bootstrap for our navbar, buttons and user input fields. We used Bootswatch for our theme, and quite a bit of custom css written for placing the background image, font styling, custom color schemes and other fine tuning of the application's appearance. Included in our custom css styling is a google font to style all of the text in our application. 
 
-## Screenshots
+## Screenshots 
+  ### Gifs
 
 
 <br>
@@ -127,20 +129,39 @@ Our styling was created using Bootstrap for our navbar, buttons and user input f
 
  _App Functionality: Adding, crossing off as purchased, and deleting items from shopping list (gif demo)_
 <br>
-![Using the shopping list section of the application to add items, cross them off once procured, or delete invividually](public/assets/imgs/gifs/s_c_2.gif)
+![Using the shopping list section of the application to add items, cross them off once procured, or delete individually](public/assets/imgs/gifs/s_c_2.gif)
 
 <br>
 
-![Sreenshot–Error message if user does not have an account](public/assets/imgs/screenshot2.png)
+<br>
 
+ _App Functionality: Searching for a recipe and adding ingredients to the shopping list (gif demo)_
+<br>
+![A gif demonstrating searching for a recipe and adding ingredients to the shopping list (gif demo](public/assets/imgs/gifs/s_c_3.gif)
 
+<br>
 
-_Mobile Responsiveness_  -->
+_App Functionality: Saving favorite recipes (gif demo)_
+<br>
+![A gif demonstrating saving favorite recipes](public/assets/imgs/gifs/s_c_4.gif)
+
+<br>
+
+## Future Development
+We have several ideas for ways to expand and enhance the application in the future:
+
+* Adding the ability to share your shopping list easily through email or with other users of the app.
+* Adding a feature also provided through our API for the app to suggest wine pairings with our recipes. 
+* Adding a feature to show calories associated with recipes.
+* A "Frequently Shopped Items" database. 
+* The ability to display estimated cost for each item on a user's shopping list, along with an estimate for the total cost of the list's contents at the bottom. 
 
 ## License
 Licensed under the MIT License. Copyright © 2021
 
 ## Credits
+
+* [Spoontacular API for all recipes](https://spoonacular.com/food-api)
 
 * [Importing and exporting ES6 modules](https://www.digitalocean.com/community/tutorials/js-modules-es6)
 
