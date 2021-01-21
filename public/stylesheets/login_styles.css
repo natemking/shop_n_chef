@@ -1,3 +1,36 @@
+h1 {
+  font-size: 150%;
+}
+
+h2 {
+  font-size: 100%
+}
+
+h4 {
+  font-size: 100%;
+  margin-bottom: 40px;
+}
+
+img {
+  max-width: 30%;
+  height: auto;
+  padding: 10px;
+}
+
+label {
+  color: #FDBB46;
+  -webkit-text-stroke: 1px black !important; 
+  font-size: 30px;
+}
+
+form.login {
+  margin-top: 50px;
+}
+
+a:link {
+  color:#27402d;
+}
+
 .background {
     background-image: url("../assets/imgs/background.jpg");
     height: 1500px;
@@ -5,49 +38,30 @@
     background-position: center;
     background-size: cover;   
   }
-  
-  form.login {
-    margin-top: 50px;
-  }
-  
-  img {
-    max-width: 30%;
-    height: auto;
-    padding: 10px;
+
+.form-control {
+    font-weight:bold;
+    font-size:large;
+    font-family: 'Bebas Neue', sans-serif;
+    -webkit-text-stroke: 0px;
   }
 
-  .signup {
-    -webkit-text-stroke: .75px black; 
-  }
-
-  a {
-    -webkit-text-stroke: .75px black; 
-  }
-
-  h4 {
-    margin-bottom: 50px;
-  }
-
-  a:link {
-    color:#27402d;
-  }
-
-  #shopList {
+#shopList {
     padding: 10px;
   }
   
-  .container {
+.container {
     text-align: center;
     justify-content: center;
     color: white;
   }
   
-  .center {
+.center {
     margin-left: auto;
     margin-right: auto;
   }
   
-  .boxed {
+.boxed {
     border: 1px solid green ;
     background: rgba(255,255,255,0.5);
     size: 25%;
@@ -55,59 +69,20 @@
     padding-right: 4rem;
   }
   
-  #nav1 {
-    background-color: rgba(255,255,255,0.5);
-    font-weight:bold;
-    font-size:large;
-    font-family: 'Bebas Neue', sans-serif;
-  }
-  
-  .card {
+.card {
     background-color: rgba(255,255,255,0.5);
   }
   
-  .body {
-  
+.body {
    font-weight:bold;
    font-family: 'Bebas Neue', sans-serif;
   }
-  
-  .container {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 25px;
-  }
-  
-  .no-strike {
-    text-decoration: none;
-  }
-  
-  .strike {
-    text-decoration: line-through;
-  }
-  
-  .shopping-list {
-    font-family: 'Bebas Neue', sans-serif;
+
+#email-input {
+    color: black
   }
 
-  h1{
-    font-size: 150%;
-  }
-
-  h2{
-    font-size: 100%
-  }
-
-  h4{
-    font-size: 100%;
-  }
-
-  label {
-    color: #FDBB46;
-    -webkit-text-stroke: .75px black; 
-    font-size: 30px;
-  }
-
-  .btn {
+.btn {
     font-size: 20px;
     color: black;
     background-color: #A87B50;
@@ -116,12 +91,12 @@
     border-color: black
   }
 
-  .title {
+.title {
     color: #FDBB46;
-    -webkit-text-stroke: .75px black;
+    -webkit-text-stroke: 1px black;
     text-decoration: underline; 
   }
 
-  .and {
+.and {
     font-family: Georgia, 'Times New Roman', Times, serif
   }
