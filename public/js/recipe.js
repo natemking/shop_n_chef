@@ -175,7 +175,7 @@ $(document).ready(() => {
       });
 
       //If there are duplicates then alert the user. Otherwise add the recipe to the DB and display in navbar dropdown.
-      if (dupeCheck.length > 0) {
+      if (results.length !== 0 && dupeCheck.length > 0) {
         alert("You have already saved this recipe!");
       } else {
         $.ajax({
