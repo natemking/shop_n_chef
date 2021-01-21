@@ -89,7 +89,6 @@ If the connection is successful, you will see:
 
 `npm install --save sequelize`
 
-
 ### Node.js
 
 Express is the application that we utlized the most through node.js. The servers that we created route to the HTML data and the other to API for the data. 
@@ -117,15 +116,26 @@ Our styling was created using Bootstrap for our navbar, buttons and user input f
 
 ## Screenshots
 
+
+<br>
+
+ _App Functionality: Create New Account (gif demo)_
+<br>
+![Creating new user account in app](public/assets/imgs/gifs/s_c_1.gif)
+
+<br>
+
+ _App Functionality: Adding, crossing off as purchased, and deleting items from shopping list (gif demo)_
+<br>
+![Using the shopping list section of the application to add items, cross them off once procured, or delete invividually](public/assets/imgs/gifs/s_c_2.gif)
+
+<br>
+
 ![Sreenshot–Error message if user does not have an account](public/assets/imgs/screenshot2.png)
-<br>
 
-<!-- _App Functionality_
-<br>
 
-![mobile resolution](public/assets/images/screenshots/burger_banquet_mobile.png)
 
-_Mobile Responsiveness_ --> 
+_Mobile Responsiveness_  -->
 
 ## License
 Licensed under the MIT License. Copyright © 2021
