@@ -47,7 +47,7 @@ Team 1
 
    This application is designed for those who are experienced home chefs, or newcomers to home cooking, combining food shopping with new, exciting, and inspiring recipe suggestions. 
 
-## Description/User Story 
+### Description/User Story 
   AS A USER I want an app that will allow me to link my grocery list with potential recipes
   WHEN I use Shop & Chef 
   THEN I will enter my log-in credentials
@@ -69,8 +69,8 @@ To streamline the experience of creating a shopping list based on recipes, Shop 
 
 The application also allows users to save and retrieve their favorite recipes. 
 
-# Usage/Installation
-## Running the application: 
+## Usage/Installation
+### Running the application: 
   In the terminal, run the following commands:
 * `npm install express`
 * `npm install express-session`
@@ -115,7 +115,8 @@ We used AJAX for all of our front end API calls.
 ### CSS
 Our styling was created using Bootstrap for our navbar, buttons and user input fields. We used Bootswatch for our theme, and quite a bit of custom css written for placing the background image, font styling, custom color schemes and other fine tuning of the application's appearance. Included in our custom css styling is a google font to style all of the text in our application. 
 
-## Screenshots
+## Screenshots 
+  ### Gifs
 
 
 <br>
@@ -132,7 +133,19 @@ Our styling was created using Bootstrap for our navbar, buttons and user input f
 
 <br>
 
-![Screenshot–Error message if user does not have an account](public/assets/imgs/screenshot2.png)
+<br>
+
+ _App Functionality: Searching for a recipe and adding ingredients to the shopping list (gif demo)_
+<br>
+![A gif demonstrating searching for a recipe and adding ingredients to the shopping list (gif demo](public/assets/imgs/gifs/s_c_3.gif)
+
+<br>
+
+_App Functionality: Saving favorite recipes (gif demo)_
+<br>
+![A gif demonstrating saving favorite recipes](public/assets/imgs/gifs/s_c_4.gif)
+
+<br>
 
 ## Future Development
 We have several ideas for ways to expand and enhance the application in the future:
