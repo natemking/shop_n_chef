@@ -138,10 +138,9 @@ cursor:pointer;
     visibility: visible;
 }
 
-.fa {
+.fa-cart-plus, .fa-cutlery {
     color: #FDBB46;
     -webkit-text-stroke: .75px black; 
-    cursor: pointer;
 }
 
 .fa-heart {
