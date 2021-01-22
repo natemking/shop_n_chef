@@ -17,21 +17,23 @@ Team 1
 ![express badge](https://img.shields.io/badge/express.js%20-%23404d59.svg?&style=flat)
 ![ejs badge](https://img.shields.io/badge/%20EJS%20-%23B4CA65.svg?&style=flatColor=white%22/)
 ![sequelize badge](https://img.shields.io/badge/Sequelize-%2304AFEF.svg?&style=flat&logoColor=white)
-![heroku badge](https://img.shields.io/badge/heroku%20-%23430098.svg?&style=for-the-badge&logo=heroku&logoColor=white)
+![heroku badge](https://img.shields.io/badge/heroku%20-%23430098.svg?&style=flat&logo=heroku&logoColor=white)
 ![bootstrap badge](https://img.shields.io/badge/bootstrap%20-%23563D7C.svg?&style=flat&logo=bootstrap&logoColor=white)
 
 ---
 ## Table of Contents
- * [Links](#links)
- * [Introduction](#introduction)
- * [Description](#description)
- * [Usage](#usage)
+ - [Links](#links)
+ - [Introduction](#introduction)
+    + [Description/User Story](#description/user-story)
     + [Scope of Work](#scope-of-work)
+ * [Usage/Installation](#usage/installation)
+    + [Running the Application](#running-the-application)
     + [Sequelize](#sequelize)
     + [Node.js](#nodejs)
     + [EJS View Engine](#ejs-view-engine)
-    + [Axios](#axios)
     + [jQuery](#jquery)
+    + [Axios](#axios)
+    + [AJAX](#ajax)
     + [CSS](#css)
   * [Screenshots](#screenshots)
   * [Areas for Future App Development](#future-development)
@@ -49,8 +51,30 @@ Team 1
 
 ### Description/User Story 
   AS A USER I want an app that will allow me to link my grocery list with potential recipes
+
   WHEN I use Shop & Chef 
   THEN I will enter my log-in credentials
+
+  WHEN I successfully log-in
+  THEN I get a shopping list
+
+  WHEN I add an item to the item list input
+  THEN I can save the ITEM
+
+  WHEN I save an item
+  THEN I can edit, delete, or cross-off an item
+
+  WHEN I search for a recipe or ingredient 
+  THEN I am presented with a list of recipe choices
+  
+  WHEN I chose a recipe
+  THEN it's picture, ingredients, & instructions will appear
+
+  WHEN I click on an ingredient
+  THEN it will be saved to my shopping list and checked off on this list
+
+  WHEN I click the favorite button
+  THEN the current displayed recipe will be saved to my saved recipe list
 
   WHEN I input an ingredient
   THEN it will be added to a list
@@ -60,6 +84,9 @@ Team 1
 
   WHEN I have a recipe I like
   THEN I can save this to a list of favorite recipes
+
+  WHEN I return to the site
+  THEN I can access all of my items and recipes
 
 
 ### Scope of Work
@@ -84,7 +111,7 @@ If the connection is successful, you will see:
 `🌎  Listening on port %s. Visit http://localhost:%s/ in your browser`
 
 ### Sequelize
-  Sequelize is a promise-based Node.js ORM which we utilized to streamline usage with MySQL.
+  Sequelize is a promise-based Node.js ORM which we utilized to streamline usage with MySQL. 
 
   Installation:
 
